@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/**
+ * @author Michel Rouleau <mrouleau@csfoy.ca>
+ * @todo Lier les modules avec des instructions @import
+ * @todo Compléter selon l'énoncé de l'exercice
+ */
+
+/****** Librairies ******/
+/** Normalize **/
+@import 'utilitaires/normalize';
+
+/**** UTILITAIRES ****/
+@import 'utilitaires/utilitaires';
+/****** BASE ******/
+/** Typographie **/
+@import 'base/typo';
+/****** LAYOUT ******/
+@import 'base/grille';
+
+/****** MODULES ******/
+/** Menu responsive **/
+@import 'modules/menuwp';
+
+
