@@ -9,8 +9,7 @@ get_header(); //Appel de l'inclusion d'entête de page
     ?>
 
     <div>
-        <h2><?php the_title() //fonction native WP
-            ?></h2>
+        <h2 class="sous-titre"></h2>
     </div>
     <?php
     // Utiliser le code ci-dessous pour créer une image responsive

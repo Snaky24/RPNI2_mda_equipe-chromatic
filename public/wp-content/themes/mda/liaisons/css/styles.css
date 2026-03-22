@@ -302,8 +302,8 @@ h2,
 .titreNiveau2,
 h3,
 .titreNiveau3 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 500;
+  font-family: "EB Garamond", serif;
+  font-weight: bold;
 }
 
 h1,
@@ -450,9 +450,7 @@ body {
 /* Entete de page */
 .entete {
   max-width: 100%;
-  margin: 0 auto;
-  background-color: #323;
-  border-bottom: 1px solid #323;
+  margin: 0;
 }
 .entete__titre {
   margin: 0;
@@ -522,7 +520,6 @@ body {
 /** pages **/
 .page-voletsculturels {
   width: 900px;
-  background-color: beige;
 }
 
 /*# sourceMappingURL=styles.css.map */
