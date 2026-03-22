@@ -22,4 +22,17 @@
 /** Menu responsive **/
 @import 'modules/menuwp';
 
+@import 'pages/accueil';
+@import 'pages/volets';
+@import 'pages/nouvelles';
+@import 'pages/equipe';
 
+/****** MODULES ******/
+/** entête de page **/
+@import 'layout/entete';
+/** navigation **/
+@import 'modules/navigation';
+/** pied de page **/
+@import 'layout/piedpage';
+/** article WP **/
+@import 'modules/article';

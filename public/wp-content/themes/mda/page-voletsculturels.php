@@ -1,10 +1,9 @@
 <?php
 /* Template name: Volets culturels */
 get_header(); //Appel de l'inclusion d'entête de page
-echo "page-voletsculturels.php";
 ?>
 
-<main class="page">
+<main class="page-voletsculturels">
 
     <?php //var_dump($post); //Ce que reçoit la page
     ?>

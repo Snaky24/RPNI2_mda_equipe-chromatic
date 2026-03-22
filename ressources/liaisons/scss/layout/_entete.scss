@@ -1,0 +1,15 @@
+/* Entete de page */
+.entete{
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #323;
+  border-bottom: 1px solid #323;
+  &__titre{
+    margin: 0;
+    padding: 10px;
+  }
+  &__slogan{
+    margin: 0;
+    padding: 10px;
+  }
+}

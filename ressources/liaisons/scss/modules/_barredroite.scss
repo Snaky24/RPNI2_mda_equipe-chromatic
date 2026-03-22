@@ -1,0 +1,17 @@
+.barredroite {
+  float: right;
+  border-left: 1px solid #333;
+  ul{
+    list-style: none;
+    margin: 0px 0px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    @media only screen and (max-width: 735px) {
+      margin-left: 0;
+    }
+  }
+  @media only screen and (max-width: 735px) {
+    float: none;
+    width: 100%;
+    border-left: none;
+  }
+}
