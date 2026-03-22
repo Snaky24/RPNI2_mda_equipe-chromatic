@@ -297,64 +297,16 @@ body {
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
 }
 h1,
-.titreNiveau1,
 h2,
-.titreNiveau2,
-h3,
-.titreNiveau3 {
+h3 {
   font-family: "EB Garamond", serif;
   font-weight: bold;
-}
-
-h1,
-.titreNiveau1 {
-  font-size: 28px;
-  margin: 0;
-}
-h1--desktop,
-.titreNiveau1--desktop {
-  font-size: 48px;
-  padding-bottom: 15px;
-  position: relative;
-}
-h1--desktop:after,
-.titreNiveau1--desktop:after {
-  background-color: #111;
-  content: "";
-  display: inline-block;
-  width: 150px;
-  height: 8px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-}
-
-h2,
-.titreNiveau2 {
-  font-size: 20px;
-  text-transform: uppercase;
-}
-h2--desktop,
-.titreNiveau2--desktop {
-  font-size: 28px;
-}
-
-h3,
-.titreNiveau3 {
-  font-size: 18px;
-}
-h3--desktop,
-.titreNiveau3--desktop {
-  font-size: 22px;
 }
 
 .texte {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 26px;
   line-height: 1.375;
-}
-.texte--desktop {
-  line-height: 1.5;
 }
 
 /** Hyperliens **/
@@ -423,18 +375,13 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-.h1, .h2 {
-  font-family: "EB Garamond", serif;
-  font-weight: 900;
-}
-
 .contenu {
   max-width: 960px;
   margin: 0 auto;
 }
 
 .page {
-  float: left;
+  float: center;
   width: 100%;
 }
 @media only screen and (max-width: 735px) {
