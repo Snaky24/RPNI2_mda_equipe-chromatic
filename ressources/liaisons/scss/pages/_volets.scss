@@ -1,8 +1,39 @@
-.page-voletsculturels {
-    width: 100%;
+.contenu-page {
+    width: 90%;
 }
 
 .contenu-page h2 {
     margin: 0 auto;
-    font-size: 50px;
+    font-family: "EB Garamond", serif;
+    margin-bottom: 30px;
+}
+
+.contenu-page h3 {
+    text-align: right;
+}
+
+.contenu-page p {
+    font-family: "Inter", sans-serif;
+    line-height: 2;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.article-volets {
+    background-color: #4B4032;
+    padding: 10px;
+}
+
+.article__fond-volets {
+    background-color: #fff;
+}
+
+.article__lien-volets {
+    color: #000;
+    text-decoration: none;
+    text-align: center;
 }
