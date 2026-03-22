@@ -1,0 +1,34 @@
+/**
+* @author Prenom Nom courriel
+* @todo Importer la fonte Futura
+* @todo Personnaliser les variables selon les spécifications du guide visuel
+*       Certaines variables devront être définies par une fonction de coloration
+* @todo Compléter selon l'énoncé de l'exercice
+* @todo Utiliser le sélecteur & pour les sélecteurs des différentes couleurs
+*/
+
+/** Polices de caractères **/
+
+@font-face {
+  font-family: "EB Garamond", serif;
+  src: 	url('../fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
+}
+
+$fontePrimaire : "Inter", sans-serif;
+$fonteSecondaire : "EB Garamond", serif;
+
+/** Palette de couleurs **/
+// Utiliser http://chir.ag/projects/name-that-color pour obtenir des noms uniques et mémorisables
+// Permettez-vous d'utiliser un nom de variable plus explicite si la suggestion de name-that-color est trop étrange
+
+/* Couleurs de base */
+$brunFonce: #4B4032;
+$brunPale: #C6A477;
+$creme: #EDE0D0;
+$jaune: #EFA646;
+
+
+/* Autres couleurs */
+$hyperlien: $creme;
+
+/** Points de rupture **/

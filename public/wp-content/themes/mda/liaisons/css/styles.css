@@ -1,8 +1,26 @@
 @charset "UTF-8";
 /**
- * @author Michel Rouleau <mrouleau@csfoy.ca>
+ * @author Yannick Blanchet courriel
  * @todo Lier les modules avec des instructions @import
  * @todo Compléter selon l'énoncé de l'exercice
+ */
+/*
+ * ------------------
+ * TABLE DES MATIERES
+ * ------------------
+ * Librairies
+ ** Normalize
+ * UTILITAIRES
+ ** Variables
+ ** Mixins
+ * BASE
+ ** Typographie
+ ** Hyperliens
+ ** Boutons
+ * MODULES
+ ** gds - Styles généraux du Guide de styles
+ ** palette - Palette de couleurs
+ ** listeInteractivite - Éléments interactifs
  */
 /****** Librairies ******/
 /** Normalize **/
@@ -241,45 +259,25 @@ input[type=checkbox], input[type=radio] {
 }
 
 /**** UTILITAIRES ****/
-/**** Utilitaires ****/
-/* Harmoniser le modèle de boîte avec Box-Sizing */
-html {
-  box-sizing: border-box;
+/** Variables **/
+/**
+* @author Prenom Nom courriel
+* @todo Importer la fonte Futura
+* @todo Personnaliser les variables selon les spécifications du guide visuel
+*       Certaines variables devront être définies par une fonction de coloration
+* @todo Compléter selon l'énoncé de l'exercice
+* @todo Utiliser le sélecteur & pour les sélecteurs des différentes couleurs
+*/
+/** Polices de caractères **/
+@font-face {
+  font-family: "EB Garamond", serif;
+  src: url("../fonts/EBGaramond-VariableFont_wght.ttf") format("truetype");
 }
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-/* Clearfix */
-.clearfix:after {
-  content: " ";
-  display: table;
-  clear: both;
-}
-
-/* a11y */
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
-}
-
+/** Palette de couleurs **/
+/* Couleurs de base */
+/* Autres couleurs */
+/** Points de rupture **/
+/** Mixins **/
 /****** BASE ******/
 /** Typographie **/
 /**
@@ -359,221 +357,92 @@ h3--desktop,
   line-height: 1.5;
 }
 
+/** Hyperliens **/
+/**
+* @author Prenom Nom courriel
+* @todo Compléter selon l'énoncé de l'exercice
+*/
+.hyperlien {
+  color: #EDE0D0;
+  text-decoration: none;
+}
+.hyperlien--visited {
+  color: rgb(229.9384615385, 211.8384615385, 189.5615384615);
+}
+.hyperlien--hover {
+  color: rgb(208.7538461538, 175.3538461538, 134.2461538462);
+  text-decoration: underline;
+}
+.hyperlien--active {
+  color: #EFA646;
+  text-decoration: underline;
+}
+
+/** Boutons **/
+/**
+* @author Prenom Nom courriel
+* @todo Compléter selon l'énoncé de l'exercice
+*/
+.bouton {
+  background-color: #333;
+  border-radius: 18px;
+  color: black;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+.bouton:after {
+  content: "»";
+  margin-left: 0.4em;
+}
+.bouton--hover {
+  background-color: rgba(51, 51, 51, 0.75);
+}
+.bouton--active {
+  background-color: rgba(51, 51, 51, 0.5);
+}
+.bouton--inverse {
+  background-color: white;
+  border: 2px solid #333;
+}
+.bouton--inverse--hover {
+  border-color: rgba(51, 51, 51, 0.75);
+}
+.bouton--inverse--active {
+  border-color: rgba(51, 51, 51, 0.5);
+}
+
 /****** LAYOUT ******/
-/**** Grille ****/
-/**** Mini système de grilles fluides MOBILE FIRST ****/
-.conteneur {
-  /*background-color: lightBlue;*/
+/** Styles généraux de mise en page**/
+* {
+  box-sizing: border-box;
 }
 
-.col {
-  display: block;
-  /* pour espacer les blocs à la vertical.
-     Ajuster selon le besoin */
-  margin: 0 0 0.5em 0;
-  /* ce qui suit n'est pas essentiel */
-  /*background-color: linen;
-  border: 1px solid black;*/
+body {
+  margin: 0 10px;
+  padding: 0;
+  font-family: "Inter", sans-serif;
 }
 
-.col_1_de_12,
-.col_2_de_12,
-.col_3_de_12,
-.col_4_de_12,
-.col_5_de_12,
-.col_6_de_12,
-.col_7_de_12,
-.col_8_de_12,
-.col_9_de_12,
-.col_10_de_12,
-.col_11_de_12 {
-  width: 100%;
+.h1, .h2 {
+  font-family: "EB Garamond", serif;
+  font-weight: 900;
 }
 
-.invisible {
-  display: none;
-}
-
-/* pour décoller les blocs du viewport, à gauche et à droite.
-Ajuster selon le besoin  */
-.conteneur {
-  padding: 0 0.5em;
-}
-
-/**** Requêtes media ****/
-/* Pour écran large */
-@media (min-width: 600px) {
-  .conteneur {
-    margin: 0 auto;
-    max-width: 1000px;
-    padding: 0;
-    /* Grille 12 colonnes en arrière-plan - Mettre en commentaires après usage */
-    /*background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 83.33333%, transparent 83.33333%);
-    background-size: 8.4507%;
-    background-origin: content-box;
-    background-clip: content-box;
-    background-position: left top;*/
-  }
-  .col {
-    margin: 0 2% 2% 0;
-    float: left;
-  }
-  .rangee > *:last-child {
-    margin-right: 0;
-  }
-  .col_1_de_12 {
-    width: 6.5%;
-  }
-  .col_2_de_12 {
-    width: 15%;
-  }
-  .col_3_de_12 {
-    width: 23.5%;
-  }
-  .col_4_de_12 {
-    width: 32%;
-  }
-  .col_5_de_12 {
-    width: 40.5%;
-  }
-  .col_6_de_12 {
-    width: 49%;
-  }
-  .col_7_de_12 {
-    width: 57.5%;
-  }
-  .col_8_de_12 {
-    width: 66%;
-  }
-  .col_9_de_12 {
-    width: 74.5%;
-  }
-  .col_10_de_12 {
-    width: 83%;
-  }
-  .col_11_de_12 {
-    width: 91.5%;
-  }
-  .col_12_de_12 {
-    width: 100%;
-  }
-  footer.col {
-    margin: 0;
-  }
-  .invisible {
-    display: block;
-    visibility: hidden;
-  }
-}
-/****** MODULES ******/
-/** Menu responsive **/
-/**
- * @author Prénom Nom courriel
- * @todo ADAPTER ce fichier selon le projet
-**/
-/**
- * TABLE DES MATIÈRES
- * Palette de couleurs
- * Base commune
- * - Bouton du menu
- * - Liste du menu
- * - Liens du menu
- * Si le javascript est activé
- */
-/****** Base commune *******/
-/* Bouton du menu (injecté par JavaScript)*/
-.navigation {
+.contenu {
   max-width: 960px;
   margin: 0 auto;
 }
-.navigation__controle {
-  background-color: #d9d7d0;
-  border: none;
-  padding: 10px;
-  min-width: 40px;
-}
-.navigation__controle:hover {
-  background-color: #f5ae09;
-}
-.navigation__controle:active {
-  background-color: #f1acb1;
-}
-.navigation__controle:focus {
-  /**
-   * Les styles du navigateur utilisent la règle outline pour définir
-   * l'état focus des éléments interactifs.
-   * Vous pouvez redéfinir cette règle ou remplacer par d'autres styles
-   * mieux adaptés à la direction visuelle.
-   * MAIS il faut souligner l'état focus et le tester au clavier.
-   */
-  outline-offset: -5px;
-  outline: #f5ae09 auto 5px;
-}
-@media (min-width: 601px) {
-  .navigation__controle {
-    display: none;
-  }
-}
 
-/* Liens du menu */
-.menu-item a {
-  background-color: #d9d7d0;
-  display: block;
-  padding: 5px 10px;
+.page {
+  float: left;
   width: 100%;
 }
-.menu-item a:link, .menu-item a:visited {
-  text-decoration: none;
-  color: inherit;
-}
-.menu-item a:active, .menu-item a:hover {
-  background-color: #f5ae09;
-}
-.menu-item a--actif {
-  border-left: 5px solid #f4d07c;
-}
-.menu-item a {
-  /*     outline: none;
-       border-left: 5px solid #f5ae09;*/
-}
-
-/* Liste du menu */
-.menu {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  max-height: none;
-}
-
-@media (min-width: 601px) {
-  .menu-item {
-    display: inline-block;
+@media only screen and (max-width: 735px) {
+  .page {
+    float: none;
+    width: 100%;
+    border-bottom: 1px solid #333;
   }
-}
-
-/* Si le javascript est activé */
-/* Pour des raisons d'accessibilité, on ne cache le menu mobile
- * que si JavaScript est activé. De cette façon, s'il est désactivé,
- * le menu restera tout de même visible à l'utilisateur.
- */
-.js .menu {
-  max-height: 100vh;
-  overflow: hidden;
-  transition: max-height 0.5s;
-}
-
-.js .navigation--ferme .menu {
-  max-height: 0;
-}
-@media (min-width: 601px) {
-  .js .navigation--ferme .menu {
-    max-height: none;
-  }
-}
-
-.page-voletsculturels {
-  width: 900px;
-  background-color: beige;
 }
 
 /****** MODULES ******/
@@ -647,6 +516,13 @@ Ajuster selon le besoin  */
 }
 .article__entete {
   background-color: #eee;
+}
+
+/** barres latérales  optionnelles**/
+/** pages **/
+.page-voletsculturels {
+  width: 900px;
+  background-color: beige;
 }
 
 /*# sourceMappingURL=styles.css.map */
