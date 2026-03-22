@@ -7,15 +7,15 @@
 .hyperlien {
   color: $hyperlien;
   text-decoration: none;
-//   &--visited {
-//     color: darken($hyperlien, 5%);
-//   }
-//   &--hover {
-//     color: darken($hyperlien, 20%);
-//     text-decoration: underline;
-//   }
-//   &--active {
-//     color: $jaune;
-//     text-decoration: underline;
-//   }
+  &--visited {
+    color: darken($hyperlien, 5%);
+  }
+  &--hover {
+    color: darken($hyperlien, 20%);
+    text-decoration: underline;
+  }
+  &--active {
+    color: $jaune;
+    text-decoration: underline;
+  }
 }

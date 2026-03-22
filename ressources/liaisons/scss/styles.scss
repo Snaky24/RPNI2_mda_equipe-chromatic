@@ -1,25 +1,72 @@
 @charset "UTF-8";
 
 /**
- * @author Michel Rouleau <mrouleau@csfoy.ca>
+ * @author Yannick Blanchet courriel
  * @todo Lier les modules avec des instructions @import
  * @todo Compléter selon l'énoncé de l'exercice
  */
 
+/*
+ * ------------------
+ * TABLE DES MATIERES
+ * ------------------
+ * Librairies
+ ** Normalize
+ * UTILITAIRES
+ ** Variables
+ ** Mixins
+ * BASE
+ ** Typographie
+ ** Hyperliens
+ ** Boutons
+ * MODULES
+ ** gds - Styles généraux du Guide de styles
+ ** palette - Palette de couleurs
+ ** listeInteractivite - Éléments interactifs
+ */
+
 /****** Librairies ******/
+
 /** Normalize **/
 @import 'utilitaires/normalize';
 
 /**** UTILITAIRES ****/
-@import 'utilitaires/utilitaires';
+
+/** Variables **/
+@import 'utilitaires/variables';
+
+/** Mixins **/
+@import 'utilitaires/mixins';
+
 /****** BASE ******/
+
 /** Typographie **/
 @import 'base/typo';
+
+/** Hyperliens **/
+@import 'base/hyperlien';
+
+/** Boutons **/
+@import 'base/bouton';
+
 /****** LAYOUT ******/
-@import 'base/grille';
+/** Styles généraux de mise en page**/
+@import 'layout/general';
 
 /****** MODULES ******/
-/** Menu responsive **/
-@import 'modules/menuwp';
-
-
+/** entête de page **/
+@import 'layout/entete';
+/** navigation **/
+@import 'modules/navigation';
+/** pied de page **/
+@import 'layout/piedpage';
+/** article WP **/
+@import 'modules/article';
+/** barres latérales  optionnelles**/
+//@import 'modules/barredroite';
+//@import 'modules/barregauche';
+/** pages **/
+@import 'pages/accueil';
+@import 'pages/volets';
+@import 'pages/nouvelles';
+@import 'pages/equipe';

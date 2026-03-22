@@ -4,12 +4,8 @@ get_header(); //Appel de l'inclusion d'entête de page
 ?>
 
 <main class="page-voletsculturels">
-
-    <?php //var_dump($post); //Ce que reçoit la page
-    ?>
-
-    <div>
-        <h2 class="sous-titre"></h2>
+    <div class="contenu-page">
+        <?php the_content(); ?>
     </div>
     <?php
     // Utiliser le code ci-dessous pour créer une image responsive
@@ -25,11 +21,6 @@ get_header(); //Appel de l'inclusion d'entête de page
             <img src="<?php echo $sizes[2][0]; ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
         </picture>
     <?php } ?>
-    <p>
-        <?php the_content() ?>
-        <?php  //echo $post->post_content; 
-        ?>
-    </p>
 
     <?php
     //Requête et boucle d'affichage des articles avec ACF
