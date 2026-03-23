@@ -16,16 +16,18 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
     <header class="entete">
-        <h1 class="entete__titre">
-            <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>
-        </h1>
-        <h2 class="entete__slogan"><?php bloginfo("description"); ?></h2>
+        <div class="entete__logo">
+            <a href="<?php bloginfo('url'); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/logo_beige.png" alt="Logo">
+            </a>
+        </div>
+        <div class="entete_nav">
+            <?php if (has_nav_menu("principal")) { ?>
+                <nav class="entete__menu">
+                    <?php wp_nav_menu(array('theme_location' => 'principal')); ?>
+                </nav>
+            <?php } ?>
+        </div>
     </header>
-    <?php if (has_nav_menu("principal")) { ?>
-        <nav id="principal" class="menu_principal">
-            <?php wp_nav_menu(array('theme_location' => 'principal')); ?>
-        </nav>
-    <?php } ?>
     <div class="contenu">
