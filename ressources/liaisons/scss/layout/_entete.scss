@@ -1,19 +1,34 @@
-/* NAVIGATION EN HAUT */
+/* CONTENEUR GLOBAL */
+.entete {
+    position: relative;
+}
+
+/* 
+   TOPBAR 
+*/
 .entete__topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
-    background-color: #000;
+
+    padding: 1.5rem 2rem;
+
+    background: transparent;
     color: #fff;
-    position: relative;
-    z-index: 10;
 }
 
+/* LOGO */
 .entete__logo img {
     height: 50px;
 }
 
+/* MENU */
 .entete__menu {
     flex: 1;
     display: flex;
@@ -32,31 +47,39 @@
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
+    font-weight: 500;
 }
 
+/* RECHERCHE */
 .entete__recherche {
     min-width: 200px;
     display: flex;
     justify-content: flex-end;
 }
 
-/* Bloc vidéo */
+/* 
+   VIDEO
+ */
 .entete__video {
     position: relative;
-    height: 400px;
+    height: 500px;
     overflow: hidden;
 }
 
-/* Vidéo */
+/* VIDEO */
 .entete__video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: relative;
+
     z-index: 1;
 }
 
-/* Overlay noir 50% */
+/* OVERLAY FONCÉ */
 .entete__video::before {
     content: "";
     position: absolute;
@@ -65,23 +88,43 @@
     z-index: 2;
 }
 
-/* Titre centré */
-.entete__titre {
+/* 
+  SLOGAN + BOUTON
+ */
+.entete__contenu {
     position: absolute;
     inset: 0;
+    z-index: 3;
+
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 3;
+
     text-align: center;
+    gap: 2rem;
     padding: 0 2rem;
 }
 
-.entete__titre h1 {
+/* SLOGAN */
+.entete__slogan {
     color: #fff;
-    font-size: 60px;
+    font-size: 2.2rem;
+    max-width: 900px;
+    line-height: 1.4;
+}
+
+/* BOUTON */
+.entete__btn {
+    background-color: #e5a24a;
+    color: #000;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 6px;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    margin: 0;
+    transition: 0.3s;
+}
+
+.entete__btn:hover {
+    background-color: #cf8d38;
 }
