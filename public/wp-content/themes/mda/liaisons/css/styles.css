@@ -586,49 +586,59 @@ body {
 /****** MODULES ******/
 /** entête de page **/
 .entete {
-  width: 100%;
-  height: 100px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
   display: flex;
   align-items: center;
-  background-color: gray;
+  justify-content: space-between;
+  padding: 2rem;
+  height: 300px;
+  overflow: hidden;
 }
 
-.entete__logo {
-  display: flex;
-  justify-content: left;
+.entete__video {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
 }
 
-/* Titre */
-.entete__titre a {
-  color: white;
-  text-decoration: none;
-  font-size: 2.6rem;
-  font-weight: 700;
+.entete__video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Menu */
-.entete_nav {
-  display: flex;
+/* Contenu du header */
+.entete__logo img {
+  height: 60px;
 }
 
 .entete__menu {
+  flex: 1;
   display: flex;
   justify-content: center;
 }
 
-.entete__menu ul {
+.entete__nav ul {
+  display: flex;
+  gap: 2rem;
   list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
-.entete__menu a {
-  color: white;
-  text-decoration: none;
+.entete__recherche {
+  min-width: 200px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Optionnel : un léger overlay pour lisibilité */
+.entete::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25); /* Ajuste l’opacité */
+  z-index: -1;
 }
 
 /** navigation **/
@@ -666,14 +676,83 @@ body {
 .piedDePage {
   max-width: 100%;
   margin: 0 auto;
-  background-color: #eee;
-  border-top: 1px solid #333;
+  background-color: #4B4032;
   clear: both;
 }
 .piedDePage h2 {
   margin: 0;
   padding: 10px;
   font-size: 1em;
+}
+
+.main__footer {
+  height: 100px;
+  display: flex;
+  justify-content: left;
+  margin-left: 100px;
+  align-items: center;
+}
+
+.separateur__footer {
+  display: flex;
+  justify-content: center;
+  padding: 60px;
+}
+
+.separateur__footer img {
+  width: 75%;
+  justify-content: left;
+}
+
+.footer__logo {
+  display: flex;
+  justify-content: left;
+  float: left;
+}
+
+.footer__logo img {
+  width: 120%;
+}
+
+.navigation__secondaire {
+  display: flex;
+  float: right;
+  align-items: center;
+}
+
+.footer__hr {
+  margin: 20px;
+}
+
+.hr_beige {
+  background-color: #EDE0D0;
+  width: 980px;
+}
+
+.footer__politque {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  padding-left: 0;
+}
+
+.navigation__politique {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: static;
+}
+
+.navigation__politique ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin-left: 60px;
+  padding-right: 20%;
+}
+
+.credit {
+  padding-left: 20%;
 }
 
 /** article WP **/
@@ -711,6 +790,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  margin-bottom: 150px;
 }
 
 .article-volets {

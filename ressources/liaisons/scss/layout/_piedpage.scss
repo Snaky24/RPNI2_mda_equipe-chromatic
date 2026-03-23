@@ -1,14 +1,84 @@
 /*pied de page*/
-.piedDePage{
+.piedDePage {
   max-width: 100%;
   margin: 0 auto;
-  background-color: #eee;
-  border-top: 1px solid #333;
+  background-color: #4B4032;
   clear: both;
-  h2{
+
+  h2 {
     margin: 0;
     padding: 10px;
     font-size: 1em;
 
   }
+}
+
+.main__footer {
+  height: 100px;
+  display: flex;
+  justify-content: left;
+  margin-left: 100px;
+  align-items: center;
+}
+
+.separateur__footer {
+  display: flex;
+  justify-content: center;
+  padding: 60px;
+}
+
+.separateur__footer img {
+  width: 75%;
+  justify-content: left;
+}
+
+.footer__logo {
+  display: flex;
+  justify-content: left;
+  float: left;
+}
+
+.footer__logo img {
+  width: 120%;
+}
+
+.navigation__secondaire {
+  display: flex;
+  float: right;
+  align-items: center;
+}
+
+.footer__hr {
+  margin: 20px;
+}
+
+.hr_beige {
+  background-color: #EDE0D0;
+  width: 980px;
+}
+
+.footer__politque {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  padding-left: 0;
+}
+
+.navigation__politique {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: static;
+}
+
+.navigation__politique ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin-left: 60px;
+  padding-right: 20%;
+}
+
+.credit {
+  padding-left: 20%;
 }

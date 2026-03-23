@@ -16,18 +16,29 @@
     <?php wp_head(); ?>
 </head>
 
-    <header class="entete">
-        <div class="entete__logo">
-            <a href="<?php bloginfo('url'); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/logo_beige.png" alt="Logo">
-            </a>
-        </div>
-        <div class="entete_nav">
-            <?php if (has_nav_menu("principal")) { ?>
-                <nav class="entete__menu">
-                    <?php wp_nav_menu(array('theme_location' => 'principal')); ?>
-                </nav>
-            <?php } ?>
-        </div>
-    </header>
-    <div class="contenu">
+<header class="entete">
+    <div class="entete__video">
+        <video autoplay muted loop playsinline>
+            <source src="<?php echo get_template_directory_uri(); ?>/liaisons/videos/entete__video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="entete__logo">
+        <a href="<?php bloginfo('url'); ?>">
+            <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/logo_beige.png" alt="Logo">
+        </a>
+    </div>
+
+    <div class="entete__menu">
+        <?php if (has_nav_menu("principal")) { ?>
+            <nav class="entete__nav">
+                <?php wp_nav_menu(array('theme_location' => 'principal')); ?>
+            </nav>
+        <?php } ?>
+    </div>
+
+    <div class="entete__recherche">
+        <?php get_search_form(); ?>
+    </div>
+</header>
+
+<div class="contenu">

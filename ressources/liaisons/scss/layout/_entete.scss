@@ -1,46 +1,55 @@
 .entete {
-    width: 100%;
-    height: 100px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
     display: flex;
-    // justify-content: center;
     align-items: center;
-    background-color: gray;
+    justify-content: space-between;
+    padding: 2rem;
+    height: 300px;
+    overflow: hidden;
 }
 
-.entete__logo {
-  display: flex;
-  justify-content: left;
+.entete__video {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
 }
 
-/* Titre */
-.entete__titre a {
-    color: white;
-    text-decoration: none;
-    font-size: 2.6rem;
-    font-weight: 700;
+.entete__video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Menu */
-.entete_nav {
-  display: flex;
+/* Contenu du header */
+.entete__logo img {
+    height: 60px;
 }
 
 .entete__menu {
-  display: flex;
-  justify-content: center;
-}
-
-.entete__menu ul {
-    list-style: none;
+    flex: 1;
     display: flex;
     justify-content: center;
-    gap: 30px;
 }
 
-.entete__menu a {
-    color: white;
-    text-decoration: none;
+.entete__nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.entete__recherche {
+    min-width: 200px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Optionnel : un léger overlay pour lisibilité */
+.entete::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.25); /* Ajuste l’opacité */
+    z-index: -1;
 }
