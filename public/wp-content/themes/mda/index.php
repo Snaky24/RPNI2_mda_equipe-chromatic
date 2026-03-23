@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 <main class="page">
-    <?php echo "index.php"; ?>
     <?php
     if (have_posts()) {
         while (have_posts()) {

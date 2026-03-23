@@ -1,28 +1,17 @@
-.entete {
-    position: relative;
+/* NAVIGATION EN HAUT */
+.entete__topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem;
-    height: 300px;
-    overflow: hidden;
+    padding: 1rem 2rem;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    z-index: 10;
 }
 
-.entete__video {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-}
-
-.entete__video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Contenu du header */
 .entete__logo img {
-    height: 60px;
+    height: 50px;
 }
 
 .entete__menu {
@@ -39,17 +28,60 @@
     padding: 0;
 }
 
+.entete__nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 .entete__recherche {
     min-width: 200px;
     display: flex;
     justify-content: flex-end;
 }
 
-/* Optionnel : un léger overlay pour lisibilité */
-.entete::before {
+/* Bloc vidéo */
+.entete__video {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+/* Vidéo */
+.entete__video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+/* Overlay noir 50% */
+.entete__video::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.25); /* Ajuste l’opacité */
-    z-index: -1;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+/* Titre centré */
+.entete__titre {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.entete__titre h1 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 0;
 }
