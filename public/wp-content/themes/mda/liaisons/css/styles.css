@@ -88,7 +88,7 @@ main { /* 1 */
  */
 figure {
   rotate: 5deg;
-  margin-top: 200px;
+  margin-top: 150px;
 }
 
 /**
@@ -1113,23 +1113,56 @@ body {
 .articles-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-bottom: 150px;
+  gap: 5rem;
+  width: 90%;
 }
 
 .article-volets {
   background-color: #4B4032;
-  padding: 10px;
+  padding: 5px;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.article__entete-volets {
+  padding: 5px;
 }
 
 .article__fond-volets {
   background-color: #fff;
+  margin: 20px;
+  text-align: center;
+  width: 90%;
+  box-shadow: 0px 5px 10px 0px #000;
 }
 
 .article__lien-volets {
   color: #000;
   text-decoration: none;
-  text-align: center;
+  font-size: 25px;
+}
+
+.article__btn-volets {
+  padding: 20px;
+}
+
+.btn__a-volets :hover {
+  cursor: pointer;
+  background-color: #815317;
+  transition: all 0.2s;
+  color: #fff;
+  letter-spacing: 0.1rem;
+}
+
+.article__a-volets {
+  padding: 15px;
+  width: 70%;
+  background-color: #EFA646;
+  border: none;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  font-size: 18px;
+  color: #4B4032;
 }
 
 /*# sourceMappingURL=styles.css.map */
