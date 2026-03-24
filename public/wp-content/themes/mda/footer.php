@@ -1,4 +1,12 @@
- <footer>
+Gemini a dit
+On va régler ça une bonne fois pour toutes ! Si ton footer ne prend pas toute la largeur, c'est souvent parce qu'il est coincé dans un conteneur parent (comme une div .contenu ou .site-container) qui a une largeur maximale.
+
+Pour corriger cela, on va fermer toutes les div avant d'ouvrir le footer et utiliser des unités de mesure précises (px) pour ton padding de 250px.
+
+1. Le PHP (footer.php)
+Assure-toi de bien fermer la div du contenu global avant d'ouvrir la balise <footer>.
+
+PHP
     </div> <footer class="piedDePage">
         <div class="footer__inner">
             
