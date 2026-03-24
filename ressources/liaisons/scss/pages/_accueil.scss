@@ -1,0 +1,245 @@
+// --- Variables de base ---
+$brunFonce: #463f32;
+$brunPale: #e5d9ca;
+$creme: #f3e9dc;
+$jaune: #f1a94e;
+$font-serif: "Georgia", serif; 
+
+/* --- Mise en page globale --- */
+.titre-principal {
+    font-family: $font-serif;
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    padding: 80px 10% 40px;
+    color: $brunFonce;
+}
+
+.section__titre {
+    font-family: $font-serif;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* --- Section NOUVELLES --- */
+.nouvelles {
+    padding: 60px 10%;
+    
+    &__grille {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        justify-items: center;
+    }
+}
+
+.carte-polaroid {
+    background: #fff;
+    padding: 15px 15px 40px 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    &:hover { transform: rotate(-1deg) translateY(-5px); }
+
+    .polaroid__image {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        border: 1px solid #eee;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .polaroid__texte {
+        padding: 20px 10px;
+        p {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            min-height: 60px;
+        }
+    }
+}
+
+.btn-voir-plus {
+    display: inline-block;
+    border: 1px solid $brunFonce;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: $brunFonce;
+    background: $brunPale;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.2s;
+
+    &:hover {
+        background: $brunFonce;
+        color: #fff;
+    }
+}
+
+/* --- Section À PROPOS  --- */
+.a-propos {
+    padding: 100px 15%;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+
+    &__texte {
+        flex: 1;
+        h2 { font-family: $font-serif; font-size: 2.5rem; margin-bottom: 25px; }
+        p { font-size: 1.2rem; line-height: 1.7; }
+    }
+
+    &__images {
+        flex: 1;
+        position: relative;
+        height: 450px;
+        
+        img {
+            width: 320px;
+            height: auto;
+            border: 12px solid #fff;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            position: absolute;
+        }
+
+        .img-inclinee-1 {
+            top: 0;
+            left: 0;
+            transform: rotate(-8deg);
+            z-index: 1;
+        }
+
+        .img-inclinee-2 {
+            top: 140px;
+            left: 100px;
+            transform: rotate(4deg);
+            z-index: 2;
+        }
+    }
+}
+
+/* --- Section VOLET CULTUREL --- */
+.volet-culturel {
+    padding: 100px 10% 150px;
+    text-align: center;
+
+    &__conteneur {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        padding-top: 40px;
+    }
+
+    &__images {
+        flex: 1;
+        position: relative;
+        height: 400px;
+
+        .img-polaroid {
+            background: #fff;
+            padding: 10px 10px 40px 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: absolute;
+            width: 280px;
+
+            img { width: 100%; height: 200px; object-fit: cover; }
+
+            &--base {
+                top: 0;
+                left: 0;
+                transform: rotate(-5deg);
+                z-index: 1;
+            }
+
+            &--dessus {
+                bottom: 0;
+                left: 120px;
+                transform: rotate(3deg);
+                z-index: 3;
+            }
+        }
+    }
+
+    &__bloc-info {
+        flex: 1.2;
+        background: $brunFonce;
+        color: #fff;
+        padding: 60px;
+        margin-left: -100px; 
+        z-index: 2;
+        text-align: left;
+        box-shadow: 10px 15px 40px rgba(0,0,0,0.3);
+
+        h2 { font-family: $font-serif; font-size: 2.2rem; margin-bottom: 20px; }
+        p { font-size: 1.2rem; margin-bottom: 35px; opacity: 0.9; }
+
+        .btn-beige {
+            background: $creme;
+            color: $brunFonce;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background 0.2s;
+            &:hover { background: #fff; }
+        }
+    }
+
+    &__controles {
+        margin-top: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .fleche {
+            font-size: 2rem;
+            cursor: pointer;
+            color: $brunFonce;
+        }
+
+        .point {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid $jaune;
+            cursor: pointer;
+
+            &--actif { background: $jaune; }
+        }
+    }
+}
+
+/* --- Adaptations Mobile (Responsive) --- */
+@media (max-width: 1024px) {
+    .a-propos, .volet-culturel__conteneur {
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    .a-propos__images, .volet-culturel__images {
+        height: 350px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        
+        img, .img-polaroid { position: relative; left: 0 !important; top: 0 !important; }
+    }
+
+    .volet-culturel__bloc-info {
+        margin-left: 0;
+        margin-top: -40px;
+        width: 100%;
+    }
+}
