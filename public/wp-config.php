@@ -23,10 +23,10 @@
 define( 'DB_NAME', 'rpni2_mda' );
 
 /** Database username */
-define( 'DB_USER', 'rpni2_mda_user' );
+define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'rpni2_mda_mdp' );
+define( 'DB_PASSWORD', 'root' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
