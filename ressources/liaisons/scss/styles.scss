@@ -28,45 +28,45 @@
 /****** Librairies ******/
 
 /** Normalize **/
-@import 'utilitaires/normalize';
+@use 'utilitaires/normalize' as *;
 
 /**** UTILITAIRES ****/
 
 /** Variables **/
-@import 'utilitaires/variables';
+@use 'utilitaires/variables' as *;
 
 /** Mixins **/
-@import 'utilitaires/mixins';
+@use 'utilitaires/mixins' as *;
 
 /****** BASE ******/
 
 /** Typographie **/
-@import 'base/typo';
+@use 'base/typo' as *;
 
 /** Hyperliens **/
-@import 'base/hyperlien';
+@use 'base/hyperlien' as *;
 
 /** Boutons **/
-@import 'base/bouton';
+@use 'base/bouton' as *;
 
 /****** LAYOUT ******/
 /** Styles généraux de mise en page**/
-@import 'layout/general';
+@use 'layout/general' as *;
 
 /****** MODULES ******/
 /** entête de page **/
-@import 'layout/entete';
+@use 'layout/entete' as *;
 /** navigation **/
-@import 'modules/navigation';
+@use 'modules/navigation' as *;
 /** pied de page **/
-@import 'layout/piedpage';
+@use 'layout/piedpage' as *;
 /** article WP **/
-@import 'modules/article';
+@use 'modules/article' as *;
 /** barres latérales  optionnelles**/
-//@import 'modules/barredroite';
-//@import 'modules/barregauche';
+//@use 'modules/barredroite' as *;
+//@use 'modules/barregauche' as *;
 /** pages **/
-@import 'pages/accueil';
-@import 'pages/volets';
-@import 'pages/nouvelles';
-@import 'pages/equipe';
+@use 'pages/accueil' as *;
+@use 'pages/volets' as *;
+@use 'pages/nouvelles' as *;
+@use 'pages/equipe' as *;
