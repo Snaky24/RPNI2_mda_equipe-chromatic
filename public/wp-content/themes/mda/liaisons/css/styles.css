@@ -1169,4 +1169,107 @@ body {
   color: #4B4032;
 }
 
+.page-nouvelles {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+.page-nouvelles__intro {
+  margin-bottom: 2.5rem;
+}
+.page-nouvelles__titre {
+  font-family: "EB Garamond", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #4B4032;
+  margin-bottom: 1rem;
+}
+.page-nouvelles__description {
+  font-family: "Inter", sans-serif;
+  line-height: 1.8;
+  color: #2e2e2e;
+  max-width: 70ch;
+}
+.page-nouvelles__vide {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: #4B4032;
+}
+
+.nouvelles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.nouvelle-carte {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d7c8b4;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.nouvelle-carte__image-lien {
+  display: block;
+  background-color: #e5d9ca;
+}
+.nouvelle-carte__image, .nouvelle-carte__image--placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.nouvelle-carte__image--placeholder {
+  background: linear-gradient(135deg, #efe2d3 0%, #d9c5ad 100%);
+}
+.nouvelle-carte__contenu {
+  padding: 1.2rem 1.2rem 1.5rem;
+}
+.nouvelle-carte__date {
+  font-family: "Inter", sans-serif;
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  color: #6b5a47;
+}
+.nouvelle-carte__titre {
+  margin: 0 0 0.75rem;
+  font-family: "EB Garamond", serif;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+.nouvelle-carte__titre a {
+  color: #2f281f;
+  text-decoration: none;
+}
+.nouvelle-carte__titre a:hover {
+  text-decoration: underline;
+}
+.nouvelle-carte__extrait {
+  font-family: "Inter", sans-serif;
+  margin: 0 0 1.2rem;
+  line-height: 1.7;
+  color: #2e2e2e;
+}
+.nouvelle-carte__btn {
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  background-color: #EFA646;
+  color: #4B4032;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+.nouvelle-carte__btn:hover {
+  background-color: #815317;
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .page-nouvelles {
+    width: 92%;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */
