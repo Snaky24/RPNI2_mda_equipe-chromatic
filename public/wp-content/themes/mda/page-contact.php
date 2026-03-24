@@ -1,7 +1,6 @@
 <?php
 /* Template name: Contact */
 get_header(); //Appel de l'inclusion d'entête de page
-echo "page-contact.php";
 ?>
 
 <main class="page">
