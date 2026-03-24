@@ -1,84 +1,103 @@
-/*pied de page*/
 .piedDePage {
-  max-width: 100%;
-  margin: 0 auto;
   background-color: #4B4032;
-  clear: both;
+  color: #EDE0D0;
+  width: 100vw; 
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  
+  padding: 60px 250px; 
+  box-sizing: border-box;
+  font-size: 1.3rem;
 
-  h2 {
-    margin: 0;
-    padding: 10px;
-    font-size: 1em;
-
+  &__inner {
+      width: 100%;
+      margin: 0 auto;
   }
 }
 
-.main__footer {
-  height: 100px;
-  display: flex;
-  justify-content: left;
-  margin-left: 100px;
-  align-items: center;
-}
+.footer {
+  &__ligne {
+      width: 100%;
+      height: 1px;
+      background-color: rgba(#EDE0D0, 0.4);
+      margin: 30px 0;
+  }
 
-.separateur__footer {
-  display: flex;
-  justify-content: center;
-  padding: 60px;
-}
+  &__contenu {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 20px;
+  }
 
-.separateur__footer img {
-  width: 75%;
-  justify-content: left;
-}
+  &__gauche {
+      flex: 1;
+      .footer__logo { width: 150px; margin-bottom: 15px; }
+      .footer__description { line-height: 1.5; }
+  }
 
-.footer__logo {
-  display: flex;
-  justify-content: left;
-  float: left;
-}
+  &__droite {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; 
+      text-align: left;      
+      gap: 25px;
+      padding-left: 50px;     
+  }
 
-.footer__logo img {
-  width: 120%;
-}
+  &__contact {
+      p { 
+        margin: 5px 0;
+        display: flex;        
+        align-items: center;
+        gap: 10px;
+      }
+      a {
+         color: inherit;
+         text-decoration: underline;
+      }
+  }
 
-.navigation__secondaire {
-  display: flex;
-  float: right;
-  align-items: center;
-}
+  &__abonnement {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap; 
+  }
 
-.footer__hr {
-  margin: 20px;
-}
+  &__btn {
+      background-color: #EDE0D0;
+      color: #4B4032;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      white-space: nowrap;
+      font-size: 1.3rem;
+  }
 
-.hr_beige {
-  background-color: #EDE0D0;
-  width: 980px;
-}
+  &__bas {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+      ul {
+          display: flex;
+          list-style: none;
+          gap: 20px;
+          margin: 0; padding: 0;
+          a { color: inherit; text-decoration: none; }
+      }
+  }
 
-.footer__politque {
-  display: inline-flex;
-  width: 100%;
-  align-items: center;
-  padding-left: 0;
-}
-
-.navigation__politique {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  position: static;
-}
-
-.navigation__politique ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-  margin-left: 60px;
-  padding-right: 20%;
-}
-
-.credit {
-  padding-left: 20%;
+  &__credits {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1rem;
+      opacity: 0.6;
+  }
 }
