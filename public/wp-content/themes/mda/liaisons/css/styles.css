@@ -87,8 +87,7 @@ main { /* 1 */
  * Add the correct margin in IE 8.
  */
 figure {
-  rotate: 5deg;
-  margin-top: 150px;
+  rotate: 3deg;
 }
 
 /**
@@ -1168,6 +1167,11 @@ body {
   text-decoration: none;
   font-size: 18px;
   color: #4B4032;
+}
+
+.img-volet {
+  background-color: #000;
+  margin: 20px;
 }
 
 .page-nouvelles {
