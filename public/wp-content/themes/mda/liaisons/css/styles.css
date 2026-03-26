@@ -86,10 +86,6 @@ main { /* 1 */
 /**
  * Add the correct margin in IE 8.
  */
-figure {
-  rotate: 3deg;
-}
-
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -1169,7 +1165,7 @@ body {
   color: #4B4032;
 }
 
-.img-volet {
+.picture-nom_volet-volets img {
   background-color: #000;
   margin: 20px;
 }
