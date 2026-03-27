@@ -6,11 +6,11 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /rpni2/RPNI2_mda_equipe-chromatic/public/
+RewriteBase /RPNI2_mda_equipe-chromatic/public/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /rpni2/RPNI2_mda_equipe-chromatic/public/index.php [L]
+RewriteRule . /RPNI2_mda_equipe-chromatic/public/index.php [L]
 </IfModule>
 
 # END WordPress
