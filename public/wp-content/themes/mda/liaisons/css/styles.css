@@ -86,6 +86,10 @@ main { /* 1 */
 /**
  * Add the correct margin in IE 8.
  */
+figure {
+  rotate: 5deg;
+}
+
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -1165,9 +1169,58 @@ body {
   color: #4B4032;
 }
 
-.picture-nom_volet-volets img {
-  background-color: #000;
-  margin: 20px;
+.volets_images-rotate1 {
+  display: flex;
+  width: 350px;
+  height: auto;
+  transform: rotate(-8deg);
+  border: 12px solid #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  justify-content: center;
+}
+
+.volets_images-rotate2 {
+  display: flex;
+  width: 350px;
+  height: auto;
+  transform: rotate(8deg);
+  border: 12px solid #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  justify-content: center;
+}
+
+.volets_images-img1 {
+  width: 325px;
+  z-index: 1;
+}
+
+.volets_images-img2 {
+  width: 325px;
+  z-index: 1;
+}
+
+.volets__titre {
+  color: #fff;
+  font-size: 30px;
+}
+
+.titre-paragraphe {
+  float: right;
+  margin-top: 50px;
+  margin-right: 360px;
+}
+
+.volets__paragraphe {
+  color: #fff;
+  font-size: 30px;
+}
+
+.volets-fond {
+  background-color: #4B4032;
+  border-radius: 20px;
+  height: auto;
 }
 
 .page-nouvelles {

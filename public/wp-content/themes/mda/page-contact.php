@@ -7,11 +7,6 @@ get_header(); //Appel de l'inclusion d'entête de page
 
     <?php //var_dump($post); //Ce que reçoit la page
     ?>
-
-    <div>
-        <h2><?php the_title() //fonction native WP
-            ?></h2>
-    </div>
     <?php
     // Utiliser le code ci-dessous pour créer une image responsive
     if (has_post_thumbnail()) {
