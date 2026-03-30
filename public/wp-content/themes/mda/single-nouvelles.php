@@ -1,59 +1,50 @@
 <?php
 get_header();
-echo "single-nouvelles.php";
 ?>
 
-<main class="page">
+<main class="single-nouvelle">
 
-    <?php the_post(); //nécessaire à the_author() et the_date()
-    // var_dump($post); //Ce que reçoit la page
-    ?>
-    <article class="article">
-        <header class="article__entete">
-            <h2 class="article__titre"><?php the_title() ?></h2>
-        </header>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+        <article class="single-nouvelle__article">
 
+            <header class="single-nouvelle__hero">
+                <?php if (has_post_thumbnail()) : ?>
+                    <div class="single-nouvelle__image-principale">
+                        <?php the_post_thumbnail('full'); ?>
+                    </div>
+                <?php endif; ?>
 
-        <?php
+                <div class="single-nouvelle__hero-contenu">
+                    <p class="single-nouvelle__date"><?php echo get_the_date('j F Y'); ?></p>
+                    <h1 class="single-nouvelle__titre"><?php the_title(); ?></h1>
+                </div>
+            </header>
 
-        //Affichage de plusieurs images responsives définies dans les champs d'ACF
+            <section class="single-nouvelle__contenu">
+                <a class="single-nouvelle__retour" href="<?php echo esc_url(get_post_type_archive_link('nouvelles')); ?>">
+                    ← Retour aux nouvelles
+                </a>
 
-        //Boucler dans les champs d'images de ACF - un champ par image
-        //Nommer les champs avec un numéro - photo_1, photo_2
-        //Ici 8 images possibles
-        for ($cpt = 1; $cpt <= 8; $cpt++) {
+                <div class="single-nouvelle__texte">
+                    <?php the_content(); ?>
+                </div>
+            </section>
 
-            //Le champ d'ACF doit être configuré pour retourner un tableau
-            $image_info = get_field("photo_" . $cpt);
+            <nav class="single-nouvelle__navigation">
+                <div class="single-nouvelle__precedent">
+                    <?php previous_post_link('%link', '← Précédent', true, '', 'category'); ?>
+                </div>
 
-            //Si l'image est définie dans ACF
-            if ($image_info != null) {
-                //Utiliser la balise picture pour le redimensionnement de l'image
-                //ici on utilise trois images personnalisées... Mais on peut utiliser thumbnail, medium, etc...
-                //l'attribut sizes contient tout les formats d'image nécessaire.
-        ?>
-                <picture>
-                    <source media="(min-width: 800px)" srcset="<?= $image_info['sizes']["large"] ?>">
-                    <source media="(min-width: 601px)" srcset="<?= $image_info['sizes']["medium"] ?>">
-                    <img src="<?= $image_info['sizes']["thumbnail"] ?>" alt="<?= $image_info["alt"]; ?>">
-                </picture>
-        <?php }
-        } ?>
+                <div class="single-nouvelle__suivant">
+                    <?php next_post_link('%link', 'Suivant →', true, '', 'category'); ?>
+                </div>
+            </nav>
 
+        </article>
 
-
-        <p class="article__texte">
-            <?php the_content() ?>
-        </p>
-        <footer class="article__piedPage">
-            <h4>Par: <?php the_author(); //Attention! Nécessite un appel à the_post() avant cet affichage 
-                        ?></h4>
-            <h4> Publié le: <?php the_date(); //Attention! Nécessite un appel à the_post() avant cet affichage 
-                            ?></h4>
-        </footer>
-    </article>
+    <?php endwhile; endif; ?>
 
 </main>
 
-<?php get_footer() ?>
+<?php get_footer(); ?>
