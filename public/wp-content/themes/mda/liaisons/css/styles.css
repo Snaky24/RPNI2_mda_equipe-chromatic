@@ -1465,9 +1465,9 @@ picture {
   gap: 0.6rem;
   margin-top: 1.6rem;
   margin-bottom: 0;
-  padding: 0;
-  width: 154px;
-  height: 20px;
+  padding: 0.6rem 1rem;
+  min-width: 230px;
+  height: auto;
   background: #ffffff;
   color: #EFA646;
   font-family: Inter, sans-serif;
@@ -1476,6 +1476,7 @@ picture {
   font-weight: 800;
   line-height: 20px;
   letter-spacing: 0.2px;
+  white-space: nowrap;
 }
 
 .single-nouvelle__titre {
