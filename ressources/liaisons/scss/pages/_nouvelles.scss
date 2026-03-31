@@ -366,10 +366,14 @@
 .single-nouvelle__navigation {
 	margin-top: 3rem;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	align-items: center;
 	gap: 1.2rem;
 	flex-wrap: wrap;
+}
+
+.single-nouvelle__btn-nav--next {
+	margin-left: auto;
 }
 
 .single-nouvelle__btn-retour--top {
@@ -412,6 +416,6 @@
 	}
 
 	.single-nouvelle__navigation {
-		justify-content: flex-start;
+		justify-content: space-between;
 	}
 }

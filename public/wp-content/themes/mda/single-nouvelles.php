@@ -17,8 +17,10 @@ $retour_nouvelles_url = !empty($page_nouvelles)
     <?php if (have_posts()) : the_post(); ?>
 
     <?php
-    $nouvelle_precedente = get_previous_post();
-    $nouvelle_suivante = get_next_post();
+    // Suivant = article plus ancien (on part du plus récent vers le plus ancien)
+    // Précédent = article plus récent (disponible seulement après avoir cliqué Suivant)
+    $nouvelle_suivante   = get_previous_post();
+    $nouvelle_precedente = get_next_post();
     ?>
 
     <article class="single-nouvelle__article">
@@ -41,12 +43,12 @@ $retour_nouvelles_url = !empty($page_nouvelles)
         </section>
 
         <nav class="single-nouvelle__navigation">
-            <?php if ($nouvelle_suivante) : ?>
-                <a href="<?php echo esc_url(get_permalink($nouvelle_suivante->ID)); ?>" class="single-nouvelle__btn-nav single-nouvelle__btn-nav--next">Suivant →</a>
-            <?php endif; ?>
-
             <?php if ($nouvelle_precedente) : ?>
                 <a href="<?php echo esc_url(get_permalink($nouvelle_precedente->ID)); ?>" class="single-nouvelle__btn-nav single-nouvelle__btn-nav--prev">← Précédent</a>
+            <?php endif; ?>
+
+            <?php if ($nouvelle_suivante) : ?>
+                <a href="<?php echo esc_url(get_permalink($nouvelle_suivante->ID)); ?>" class="single-nouvelle__btn-nav single-nouvelle__btn-nav--next">Suivant →</a>
             <?php endif; ?>
         </nav>
 
