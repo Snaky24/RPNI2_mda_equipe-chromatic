@@ -358,8 +358,18 @@
 
 .single-nouvelle__navigation {
 	margin-top: 3rem;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 1.2rem;
+	flex-wrap: wrap;
 }
 
+.single-nouvelle__btn-retour--top {
+	margin: 2rem 0;
+}
+
+.single-nouvelle__btn-nav,
 .single-nouvelle__btn-retour {
 	display: inline-block;
 	padding: 1.6rem 3rem;
@@ -370,6 +380,7 @@
 	font-size: 1.8rem;
 }
 
+.single-nouvelle__btn-nav:hover,
 .single-nouvelle__btn-retour:hover {
 	background: #efe6d8;
 }
@@ -391,5 +402,9 @@
 
 	.single-nouvelle__bloc-texte h2 {
 		font-size: 3rem;
+	}
+
+	.single-nouvelle__navigation {
+		justify-content: flex-start;
 	}
 }

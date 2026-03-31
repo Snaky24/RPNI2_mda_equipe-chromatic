@@ -1,10 +1,29 @@
 <?php get_header(); ?>
 
+<?php
+$page_nouvelles = get_pages(array(
+    'meta_key'   => '_wp_page_template',
+    'meta_value' => 'page-nouvelles.php',
+    'number'     => 1,
+));
+
+$retour_nouvelles_url = !empty($page_nouvelles)
+    ? get_permalink($page_nouvelles[0]->ID)
+    : get_post_type_archive_link('nouvelles');
+?>
+
 <main class="single-nouvelle">
 
-    <?php the_post(); ?>
+    <?php if (have_posts()) : the_post(); ?>
+
+    <?php
+    $nouvelle_precedente = get_previous_post();
+    $nouvelle_suivante = get_next_post();
+    ?>
 
     <article class="single-nouvelle__article">
+
+        <a href="<?php echo esc_url($retour_nouvelles_url); ?>" class="single-nouvelle__btn-retour single-nouvelle__btn-retour--top">Retour aux nouvelles</a>
 
         <?php if (has_post_thumbnail()) : ?>
             <section class="single-nouvelle__hero">
@@ -21,46 +40,19 @@
             <?php the_content(); ?>
         </section>
 
-        <section class="single-nouvelle__bloc single-nouvelle__bloc--infos">
-            <div class="single-nouvelle__bloc-images">
-                <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/photo-maison.png" alt="Maison des arts" class="single-nouvelle__polaroid single-nouvelle__polaroid--1">
-                <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/photo-collage.png" alt="Collage artistique" class="single-nouvelle__polaroid single-nouvelle__polaroid--2">
-                <span class="single-nouvelle__tape"></span>
-            </div>
-
-            <div class="single-nouvelle__bloc-texte">
-                <h2>À Saint-Augustin-de-Desmaures</h2>
-                <p>La Maison des arts propose :</p>
-                <ul>
-                    <li>Des ateliers intergénérationnels</li>
-                    <li>Des résidences d’artistes</li>
-                    <li>Une programmation pluridisciplinaire</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="single-nouvelle__bloc single-nouvelle__bloc--benefices">
-            <div class="single-nouvelle__bloc-texte">
-                <h2>Les bénéfices</h2>
-                <ul>
-                    <li><strong>Social :</strong> Briser l’isolement, renforcer le sentiment d’appartenance</li>
-                    <li><strong>Économique :</strong> Chaque dollar investi en culture génère 1,25 $ d’activité</li>
-                    <li><strong>Patrimonial :</strong> Préserver et valoriser un lieu historique</li>
-                </ul>
-            </div>
-
-            <div class="single-nouvelle__bloc-images">
-                <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/photo-maison.png" alt="Maison des arts" class="single-nouvelle__polaroid single-nouvelle__polaroid--3">
-                <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/photo-collage.png" alt="Collage artistique" class="single-nouvelle__polaroid single-nouvelle__polaroid--4">
-                <span class="single-nouvelle__tape single-nouvelle__tape--2"></span>
-            </div>
-        </section>
-
         <nav class="single-nouvelle__navigation">
-            <a href="<?php echo get_post_type_archive_link('nouvelles'); ?>" class="single-nouvelle__btn-retour">← Précédent</a>
+            <?php if ($nouvelle_suivante) : ?>
+                <a href="<?php echo esc_url(get_permalink($nouvelle_suivante->ID)); ?>" class="single-nouvelle__btn-nav single-nouvelle__btn-nav--next">Suivant →</a>
+            <?php endif; ?>
+
+            <?php if ($nouvelle_precedente) : ?>
+                <a href="<?php echo esc_url(get_permalink($nouvelle_precedente->ID)); ?>" class="single-nouvelle__btn-nav single-nouvelle__btn-nav--prev">← Précédent</a>
+            <?php endif; ?>
         </nav>
 
     </article>
+
+    <?php endif; ?>
 
 </main>
 
