@@ -21,6 +21,10 @@ $retour_nouvelles_url = !empty($page_nouvelles)
     // Précédent = article plus récent (disponible seulement après avoir cliqué Suivant)
     $nouvelle_suivante   = get_previous_post();
     $nouvelle_precedente = get_next_post();
+    $date_nouvelle       = get_post_meta(get_the_ID(), 'date_nouvelle', true);
+    $date_affichee       = !empty($date_nouvelle)
+        ? $date_nouvelle
+        : wp_date('j F Y', get_post_timestamp(get_the_ID(), 'date'));
     ?>
 
     <article class="single-nouvelle__article">
@@ -49,7 +53,7 @@ $retour_nouvelles_url = !empty($page_nouvelles)
                                 </defs>
                             </svg>
                         </span>
-                        <span><?php echo esc_html(wp_date('j F Y', get_post_timestamp(get_the_ID(), 'date'))); ?></span>
+                        <span><?php echo esc_html($date_affichee); ?></span>
                     </p>
                 </div>
             </section>

@@ -28,6 +28,12 @@ get_header();
             <div class="nouvelles-grid">
 
                 <?php while ($requete_nouvelles->have_posts()) : $requete_nouvelles->the_post(); ?>
+                    <?php
+                    $date_nouvelle = get_post_meta(get_the_ID(), 'date_nouvelle', true);
+                    $date_affichee = !empty($date_nouvelle)
+                        ? $date_nouvelle
+                        : wp_date('j F Y', get_post_timestamp(get_the_ID(), 'date'));
+                    ?>
                     <article class="nouvelle-carte">
 
                         <a class="nouvelle-carte__image-lien" href="<?php the_permalink(); ?>">
@@ -55,7 +61,7 @@ get_header();
                                         </defs>
                                     </svg>
                                 </span>
-                                <span><?php echo esc_html(wp_date('j F Y', get_post_timestamp(get_the_ID(), 'date'))); ?></span>
+                                <span><?php echo esc_html($date_affichee); ?></span>
                             </p>
 
                             <h2 class="nouvelle-carte__titre">
