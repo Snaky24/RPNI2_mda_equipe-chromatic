@@ -148,8 +148,8 @@
 .nouvelle-carte__date-icon,
 .single-nouvelle__date-icon {
 	display: inline-flex;
-	width: 1.4rem;
-	height: 1.2rem;
+	width: 25px;
+	height: 24.627px;
 	flex: 0 0 auto;
 }
 
@@ -252,19 +252,25 @@
 	left: 50%;
 	bottom: 4rem;
 	transform: translateX(-50%);
-	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	text-align: left;
 	color: #fff;
 }
 
 .single-nouvelle__date {
 	display: inline-flex;
 	align-items: center;
+	justify-content: flex-start;
 	gap: 0.6rem;
 	margin-top: 1.6rem;
 	margin-bottom: 0;
-	padding: 0.6rem 1.2rem;
+	padding: 0;
+	width: 154px;
+	height: 20px;
 	background: #ffffff;
-	color: #4b4032;
+	color: #EFA646;
 	font-family: Inter, sans-serif;
 	font-size: 20px;
 	font-style: normal;
