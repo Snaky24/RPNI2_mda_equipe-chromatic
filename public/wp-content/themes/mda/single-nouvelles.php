@@ -32,14 +32,15 @@ $retour_nouvelles_url = !empty($page_nouvelles)
                 <?php the_post_thumbnail('large', array('class' => 'single-nouvelle__hero-image')); ?>
 
                 <div class="single-nouvelle__hero-contenu">
+                    <h1 class="single-nouvelle__titre"><?php the_title(); ?></h1>
                     <p class="single-nouvelle__date">
                         <span class="single-nouvelle__date-icon" aria-hidden="true">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none">
                                 <g clip-path="url(#clip-date-single)">
-                                    <path d="M4.50049 0.969482V2.90835" stroke="#8B6F47" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M9.00049 0.969482V2.90835" stroke="#8B6F47" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M10.6882 1.93896H2.81259C2.19122 1.93896 1.6875 2.37299 1.6875 2.9084V9.69443C1.6875 10.2298 2.19122 10.6639 2.81259 10.6639H10.6882C11.3096 10.6639 11.8133 10.2298 11.8133 9.69443V2.9084C11.8133 2.37299 11.3096 1.93896 10.6882 1.93896Z" stroke="#8B6F47" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M1.6875 4.84717H11.8133" stroke="#8B6F47" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M4.50049 0.969482V2.90835" stroke="currentColor" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M9.00049 0.969482V2.90835" stroke="currentColor" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10.6882 1.93896H2.81259C2.19122 1.93896 1.6875 2.37299 1.6875 2.9084V9.69443C1.6875 10.2298 2.19122 10.6639 2.81259 10.6639H10.6882C11.3096 10.6639 11.8133 10.2298 11.8133 9.69443V2.9084C11.8133 2.37299 11.3096 1.93896 10.6882 1.93896Z" stroke="currentColor" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M1.6875 4.84717H11.8133" stroke="currentColor" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
                                 </g>
                                 <defs>
                                     <clipPath id="clip-date-single">
@@ -50,7 +51,6 @@ $retour_nouvelles_url = !empty($page_nouvelles)
                         </span>
                         <span><?php echo esc_html(wp_date('j F Y', get_post_timestamp(get_the_ID(), 'date'))); ?></span>
                     </p>
-                    <h1 class="single-nouvelle__titre"><?php the_title(); ?></h1>
                 </div>
             </section>
         <?php endif; ?>

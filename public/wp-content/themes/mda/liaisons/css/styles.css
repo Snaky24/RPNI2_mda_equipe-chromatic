@@ -1459,11 +1459,17 @@ picture {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0;
   padding: 0.6rem 1.2rem;
-  background: #f3e7cf;
-  color: #6b5748;
-  font-size: 1.4rem;
+  background: #ffffff;
+  color: #4b4032;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 20px;
+  letter-spacing: 0.2px;
 }
 
 .single-nouvelle__titre {
