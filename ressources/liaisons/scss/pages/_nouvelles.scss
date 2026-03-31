@@ -140,6 +140,11 @@
 	align-items: center;
 	gap: 0.6rem;
 	margin: 1.6rem 1.4rem 1rem 1.4rem;
+	padding: 0.4rem 0.9rem;
+	width: fit-content;
+	height: auto;
+	background: #ffffff;
+	white-space: nowrap;
 	font-size: 1.3rem;
 	color: #8e8a84;
 	line-height: 1.4;
@@ -267,8 +272,8 @@
 	margin-top: 1.6rem;
 	margin-bottom: 0;
 	padding: 0.6rem 1rem;
-	width: 127.711px;
-	height: 17.04px;
+	width: fit-content;
+	height: auto;
 	background: #ffffff;
 	color: #EFA646;
 	font-family: Inter, sans-serif;
