@@ -39,7 +39,24 @@ get_header();
                         </a>
 
                         <div class="nouvelle-carte__contenu">
-                            <p class="nouvelle-carte__date"><?php echo esc_html(wp_date('j F Y', get_post_timestamp(get_the_ID(), 'date'))); ?></p>
+                            <p class="nouvelle-carte__date">
+                                <span class="nouvelle-carte__date-icon" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none">
+                                        <g clip-path="url(#clip-date-card)">
+                                            <path d="M4.50049 0.969482V2.90835" stroke="#8B6F47" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M9.00049 0.969482V2.90835" stroke="#8B6F47" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M10.6882 1.93896H2.81259C2.19122 1.93896 1.6875 2.37299 1.6875 2.9084V9.69443C1.6875 10.2298 2.19122 10.6639 2.81259 10.6639H10.6882C11.3096 10.6639 11.8133 10.2298 11.8133 9.69443V2.9084C11.8133 2.37299 11.3096 1.93896 10.6882 1.93896Z" stroke="#8B6F47" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M1.6875 4.84717H11.8133" stroke="#8B6F47" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip-date-card">
+                                                <rect width="13.501" height="11.6332" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </span>
+                                <span><?php echo esc_html(wp_date('j F Y', get_post_timestamp(get_the_ID(), 'date'))); ?></span>
+                            </p>
 
                             <h2 class="nouvelle-carte__titre">
                                 <a href="<?php the_permalink(); ?>">
