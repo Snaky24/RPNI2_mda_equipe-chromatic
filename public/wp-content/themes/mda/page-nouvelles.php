@@ -39,7 +39,7 @@ get_header();
                         </a>
 
                         <div class="nouvelle-carte__contenu">
-                            <p class="nouvelle-carte__date"><?php echo get_the_date('j F Y'); ?></p>
+                            <p class="nouvelle-carte__date"><?php echo esc_html(wp_date('j F Y', get_post_timestamp(get_the_ID(), 'date'))); ?></p>
 
                             <h2 class="nouvelle-carte__titre">
                                 <a href="<?php the_permalink(); ?>">

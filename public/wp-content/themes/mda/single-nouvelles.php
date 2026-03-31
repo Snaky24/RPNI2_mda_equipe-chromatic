@@ -30,7 +30,7 @@ $retour_nouvelles_url = !empty($page_nouvelles)
                 <?php the_post_thumbnail('large', array('class' => 'single-nouvelle__hero-image')); ?>
 
                 <div class="single-nouvelle__hero-contenu">
-                    <p class="single-nouvelle__date"><?php echo get_the_date('j F Y'); ?></p>
+                    <p class="single-nouvelle__date"><?php echo esc_html(wp_date('j F Y', get_post_timestamp(get_the_ID(), 'date'))); ?></p>
                     <h1 class="single-nouvelle__titre"><?php the_title(); ?></h1>
                 </div>
             </section>

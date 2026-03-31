@@ -239,12 +239,19 @@
 }
 
 .single-nouvelle__date {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
 	margin-bottom: 1.5rem;
 	padding: 0.6rem 1.2rem;
 	background: #f3e7cf;
 	color: #6b5748;
 	font-size: 1.4rem;
+}
+
+.single-nouvelle__date::before {
+	content: "🗓";
+	line-height: 1;
 }
 
 .single-nouvelle__titre {
