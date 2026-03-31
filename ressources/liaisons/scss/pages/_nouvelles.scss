@@ -243,6 +243,15 @@
 .single-nouvelle__hero {
 	position: relative;
 	margin-bottom: 4rem;
+	overflow: hidden;
+}
+
+.single-nouvelle__hero::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%);
+	pointer-events: none;
 }
 
 .single-nouvelle__hero-image {
@@ -262,6 +271,7 @@
 	align-items: flex-start;
 	text-align: left;
 	color: #fff;
+	z-index: 2;
 }
 
 .single-nouvelle__date {
