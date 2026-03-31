@@ -1584,15 +1584,21 @@ picture {
   display: inline-block;
   padding: 1.6rem 3rem;
   border: 1px solid #d8cdbd;
+  border-radius: 6px;
   background: #f7f1e8;
   color: #5a4638;
   text-decoration: none;
   font-size: 1.8rem;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .single-nouvelle__btn-nav:hover,
-.single-nouvelle__btn-retour:hover {
-  background: #efe6d8;
+.single-nouvelle__btn-nav:active,
+.single-nouvelle__btn-retour:hover,
+.single-nouvelle__btn-retour:active {
+  background: #4B4032;
+  color: #ffffff;
+  border-color: #4B4032;
 }
 
 @media screen and (max-width: 900px) {
