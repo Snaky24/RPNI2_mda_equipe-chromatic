@@ -86,7 +86,96 @@ get_header();
 
             <?php wp_reset_postdata(); ?>
         <?php else : ?>
-            <p>Aucune nouvelle pour le moment.</p>
+            <div class="nouvelles-grid nouvelles-grid--statique">
+
+                <article class="nouvelle-carte nouvelle-carte--statique">
+                    <div class="nouvelle-carte__contenu">
+                        <p class="nouvelle-carte__date">20 novembre 2025</p>
+                        <h2 class="nouvelle-carte__titre">Pourquoi une Maison des arts à Saint-Augustin-de-Desmaures ?</h2>
+                        <div class="nouvelle-carte__extrait">
+                            <p>Ce projet est né d’une conviction : la culture doit vivre au cœur du village. Nous avons imaginé un lieu où les artistes et les citoyens se rencontrent, où le patrimoine devient un moteur de créativité. Dans cet article, découvrez les coulisses de notre démarche, nos inspirations et pourquoi nous croyons que la Maison des arts changera la vie culturelle de Saint-Augustin.</p>
+                            <ul>
+                                <li>Le constat : manque d’offre culturelle locale.</li>
+                                <li>Notre vision : un lieu vivant, inclusif, durable.</li>
+                                <li>Ce que cela changera pour vous : accessibilité, rencontres, vitalité économique.</li>
+                                <li>Comment vous pouvez agir : s’abonner, contribuer, partager.</li>
+                            </ul>
+                            <p>Saint-Augustin-de-Desmaures est une ville dynamique, en pleine croissance, mais elle ne dispose d’aucun lieu dédié aux arts professionnels et à la médiation culturelle. Les citoyen·nes doivent se rendre à Québec pour accéder à une programmation spécialisée.</p>
+                            <p>La Maison des arts répond à ce besoin en transformant le presbytère, un bâtiment patrimonial emblématique, en un espace vivant où création artistique, diffusion pluridisciplinaire et rencontres citoyennes se côtoient.</p>
+                            <p>Ce projet s’inscrit dans une logique de culture de proximité, favorisant l’inclusion sociale, la participation citoyenne et la transmission intergénérationnelle. Il permettra :</p>
+                            <ul>
+                                <li>De préserver le patrimoine bâti tout en lui donnant une vocation contemporaine ;</li>
+                                <li>D’offrir des résidences d’artistes et des ateliers pour les écoles et organismes ;</li>
+                                <li>De créer un lieu de vie culturel avec café, galerie et programmation variée.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="nouvelle-carte nouvelle-carte--statique">
+                    <div class="nouvelle-carte__contenu">
+                        <p class="nouvelle-carte__date">4 décembre 2025</p>
+                        <h2 class="nouvelle-carte__titre">Les retombées d’un projet culturel structurant pour la communauté</h2>
+                        <div class="nouvelle-carte__extrait">
+                            <p>La Maison des arts de Saint-Augustin-de-Desmaures n’est pas qu’un lieu culturel : c’est un levier de développement durable pour la communauté. Voici ses principaux impacts :</p>
+                            <p><strong>1. Retombées sociales et culturelles</strong></p>
+                            <ul>
+                                <li>Accessibilité à la culture pour toutes les générations, à proximité des écoles et des résidences.</li>
+                                <li>Renforcement du tissu social grâce à des activités intergénérationnelles et des projets de médiation.</li>
+                                <li>Valorisation du patrimoine par une requalification écoresponsable du presbytère.</li>
+                            </ul>
+                            <p><strong>2. Retombées économiques</strong></p>
+                            <ul>
+                                <li>Création d’emplois locaux : coordination, billetterie, café culturel, médiation.</li>
+                                <li>Dynamisation des commerces : chaque spectateur dépense en moyenne 59,53 $ dans l’économie locale lors d’une sortie culturelle.</li>
+                                <li>Attractivité touristique : un nouveau point d’intérêt pour les excursionnistes et cyclistes en route vers Portneuf et Québec.</li>
+                            </ul>
+                            <p>En investissant dans la culture, nous investissons dans la qualité de vie, la cohésion sociale et la vitalité économique de notre territoire.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="nouvelle-carte nouvelle-carte--statique">
+                    <div class="nouvelle-carte__contenu">
+                        <p class="nouvelle-carte__date">5 janvier 2026</p>
+                        <h2 class="nouvelle-carte__titre">Comment la culture de proximité transforme nos communautés</h2>
+                        <div class="nouvelle-carte__extrait">
+                            <p>La culture de proximité est bien plus qu’un concept : c’est une stratégie de développement durable pour les villes et villages. En offrant des activités culturelles accessibles, ancrées dans le quotidien des citoyen·nes, elle crée des liens, favorise l’inclusion et dynamise l’économie locale.</p>
+                            <p>À Saint-Augustin-de-Desmaures, la Maison des arts incarne cette vision. Située au cœur du village, elle propose :</p>
+                            <ul>
+                                <li>Des ateliers intergénérationnels pour rapprocher les générations ;</li>
+                                <li>Des résidences d’artistes qui nourrissent la création locale ;</li>
+                                <li>Une programmation pluridisciplinaire qui répond aux besoins exprimés par la population.</li>
+                            </ul>
+                            <p>Les bénéfices sont multiples :</p>
+                            <ul>
+                                <li>Social : briser l’isolement, renforcer le sentiment d’appartenance ;</li>
+                                <li>Économique : chaque dollar investi en culture génère 1,22 $ dans l’économie locale ;</li>
+                                <li>Patrimonial : préserver et valoriser des lieux historiques.</li>
+                            </ul>
+                            <p><strong>Sources :</strong> Culture de proximité de Chantal Deschamps, Facteur C de Simon Brault.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="nouvelle-carte nouvelle-carte--statique">
+                    <div class="nouvelle-carte__contenu">
+                        <p class="nouvelle-carte__date">19 janvier 2026</p>
+                        <h2 class="nouvelle-carte__titre">Résidences d’artistes : pourquoi sont-elles essentielles ?</h2>
+                        <div class="nouvelle-carte__extrait">
+                            <p>Les résidences d’artistes sont des espaces-temps précieux où les créateurs peuvent se consacrer pleinement à leur art. Elles offrent un cadre propice à l’expérimentation, à la recherche et à la rencontre avec les publics.</p>
+                            <p>À la Maison des arts de Saint-Augustin-de-Desmaures, nous croyons que ces résidences sont essentielles pour :</p>
+                            <ul>
+                                <li>Soutenir la création professionnelle en arts visuels, vivants, littéraires et numériques ;</li>
+                                <li>Favoriser la médiation culturelle en permettant aux artistes de partager leur processus avec les écoles et la communauté ;</li>
+                                <li>Stimuler l’innovation artistique grâce à des espaces adaptés et inspirants.</li>
+                            </ul>
+                            <p>Chaque résidence se conclut par une sortie publique : lecture, exposition, spectacle ou atelier, créant un dialogue unique entre l’artiste et la population.</p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
         <?php endif; ?>
     </section>
 
