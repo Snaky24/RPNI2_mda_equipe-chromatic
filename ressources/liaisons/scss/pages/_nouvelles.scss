@@ -263,9 +263,10 @@
 
 .single-nouvelle__hero-contenu {
 	position: absolute;
-	left: 50%;
+	left: 2rem;
+	right: 2rem;
 	bottom: 4rem;
-	transform: translateX(-50%);
+	transform: none;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -296,6 +297,7 @@
 }
 
 .single-nouvelle__titre {
+	width: 100%;
 	font-size: 5.2rem;
 	line-height: 1.1;
 	margin: 0;
