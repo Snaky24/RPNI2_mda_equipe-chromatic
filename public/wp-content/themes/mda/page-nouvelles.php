@@ -29,10 +29,31 @@ get_header();
 
                 <?php while ($requete_nouvelles->have_posts()) : $requete_nouvelles->the_post(); ?>
                     <?php
+                    $dates_par_titre = array(
+                        'Pourquoi une Maison des arts à Saint-Augustin-de-Desmaures ?' => '20 novembre 2025',
+                        'Les retombées d’un projet culturel structurant pour la communauté' => '4 décembre 2025',
+                        'Comment la culture de proximité transforme nos communautés' => '5 janvier 2026',
+                        'Résidences d’artistes : pourquoi sont-elles essentielles ?' => '19 janvier 2026',
+                    );
+
+                    $titre_courant = trim(wp_strip_all_tags(get_the_title()));
+                    $titre_courant_normalise = str_replace(array('’', '‘', '`'), "'", $titre_courant);
+                    $titre_courant_slug = sanitize_title($titre_courant_normalise);
+
                     $date_nouvelle = get_post_meta(get_the_ID(), 'date_nouvelle', true);
                     $date_affichee = !empty($date_nouvelle)
                         ? $date_nouvelle
                         : wp_date('j F Y', get_post_timestamp(get_the_ID(), 'date'));
+
+                    foreach ($dates_par_titre as $titre_reference => $date_reference) {
+                        $titre_reference_normalise = str_replace(array('’', '‘', '`'), "'", $titre_reference);
+                        $titre_reference_slug = sanitize_title($titre_reference_normalise);
+
+                        if ($titre_reference_normalise === $titre_courant_normalise || $titre_reference_slug === $titre_courant_slug) {
+                            $date_affichee = $date_reference;
+                            break;
+                        }
+                    }
                     ?>
                     <article class="nouvelle-carte">
 
