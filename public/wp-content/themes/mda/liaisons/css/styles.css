@@ -1390,12 +1390,6 @@ picture {
   background: #e39c3f;
 }
 
-.nouvelle-carte__bouton::after {
-  content: "→";
-  font-size: 2rem;
-  line-height: 1;
-}
-
 /* RESPONSIVE */
 @media screen and (max-width: 900px) {
   .nouvelles-grid {

@@ -3,6 +3,18 @@ get_header();
 ?>
 
 <main class="single-nouvelle">
+ M
+    <?php
+    $page_nouvelles = get_pages(array(
+        'meta_key'   => '_wp_page_template',
+        'meta_value' => 'page-nouvelles.php',
+        'number'     => 1,
+    ));
+
+    $retour_nouvelles_url = !empty($page_nouvelles)
+        ? get_permalink($page_nouvelles[0]->ID)
+        : get_post_type_archive_link('nouvelles');
+    ?>
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -16,13 +28,13 @@ get_header();
                 <?php endif; ?>
 
                 <div class="single-nouvelle__hero-contenu">
-                    <p class="single-nouvelle__date"><?php echo get_the_date('j F Y'); ?></p>
+                    <p class="single-nouvelle__date"><?php echo get_the_date('j F Y'); ?> - <?php the_author(); ?></p>
                     <h1 class="single-nouvelle__titre"><?php the_title(); ?></h1>
                 </div>
             </header>
 
             <section class="single-nouvelle__contenu">
-                <a class="single-nouvelle__retour" href="<?php echo esc_url(get_post_type_archive_link('nouvelles')); ?>">
+                <a class="single-nouvelle__retour" href="<?php echo esc_url($retour_nouvelles_url); ?>">
                     ← Retour aux nouvelles
                 </a>
 

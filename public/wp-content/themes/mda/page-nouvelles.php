@@ -52,7 +52,7 @@ get_header();
                             </div>
 
                             <a class="nouvelle-carte__bouton" href="<?php the_permalink(); ?>">
-                                Lire la suite
+                                LIRE LA SUITE →
                             </a>
                         </div>
 
