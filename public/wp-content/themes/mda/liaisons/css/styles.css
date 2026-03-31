@@ -1270,22 +1270,6 @@ picture {
   text-decoration: none;
 }
 
-.nouvelle-carte__image-lien::before {
-  content: "";
-  position: absolute;
-  top: 1.2rem;
-  left: 50%;
-  transform: translateX(-50%) rotate(-4deg);
-  width: 120px;
-  height: 38px;
-  background-image: url("../uploads/2026/03/scotch-tape-png-25 2.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 3;
-  pointer-events: none;
-}
-
 .nouvelle-carte__image {
   display: block;
   width: 100%;
@@ -1306,28 +1290,52 @@ picture {
 .nouvelle-carte__contenu {
   background: #ffffff;
   padding-bottom: 2rem;
+  position: relative;
 }
 
 /* TITRE SUR BANDE BLANCHE */
 .nouvelle-carte__titre {
+  position: relative;
   margin: 0;
+  margin-top: -1.2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  min-height: 8.5rem;
   background-image: url("../uploads/2026/03/Rectangle 6.png");
-  background-size: 100% 100%;
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   background-position: center;
-  padding: 1.2rem 1rem;
-  min-height: 8rem;
+  padding: 1.2rem 1.4rem 1rem 1.4rem;
   display: flex;
   align-items: center;
-  font-size: 2rem;
-  line-height: 1.2;
+  font-size: 1.95rem;
+  line-height: 1.15;
   font-weight: 700;
-  color: #2f2924;
+  color: #2c241d;
+  z-index: 2;
+}
+
+.nouvelle-carte__titre::before {
+  content: "";
+  position: absolute;
+  top: -1.8rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  width: 12rem;
+  height: 3.8rem;
+  background-image: url("../uploads/2026/03/scotch-tape-png-25 2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 3;
+  pointer-events: none;
 }
 
 .nouvelle-carte__titre a {
-  color: #2f2924;
+  color: #2c241d;
   text-decoration: none;
+  position: relative;
+  z-index: 4;
 }
 
 .nouvelle-carte__titre a:hover {
