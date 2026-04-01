@@ -10,9 +10,20 @@
 /** Polices de caractères **/
 
 @font-face {
-  font-family: "EB Garamond", serif;
-  src: 	url('../fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  font-family: "EB Garamond";
+  src: url('../fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400 800;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: "Inter";
+  src: url('../fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+
 
 $fontePrimaire : "Inter", sans-serif;
 $fonteSecondaire : "EB Garamond", serif;

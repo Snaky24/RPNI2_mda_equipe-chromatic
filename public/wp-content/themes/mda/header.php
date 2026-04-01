@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/liaisons/css/styles.css">
+    <script defer src="<?php echo get_template_directory_uri(); ?>/liaisons/js/visionneuse.js"></script>
 
     <?php wp_head(); ?>
 </head>

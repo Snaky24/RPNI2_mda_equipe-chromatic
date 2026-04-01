@@ -6,3 +6,4 @@ package-lock.json
 ressources/SQL/
 public/.htaccess
 public/wp-config.php
+public/.htaccess

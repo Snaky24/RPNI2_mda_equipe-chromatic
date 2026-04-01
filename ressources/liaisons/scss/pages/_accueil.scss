@@ -1,245 +1,309 @@
-// --- Variables de base ---
-$brunFonce: #463f32;
-$brunPale: #e5d9ca;
-$creme: #f3e9dc;
-$jaune: #f1a94e;
-$font-serif: "Georgia", serif; 
+// ==========================================
+// VARIABLES (OFFICIELLES)
+// ==========================================
+$brunFonce: #4B4032;
+$brunPale: #C6A477;
+$creme: #EDE0D0;
+$jaune: #EFA646;
 
-/* --- Mise en page globale --- */
+$fontePrimaire : "Inter", sans-serif;
+$fonteSecondaire : "EB Garamond", serif;
+
+// ==========================================
+// MIXIN SCOTCH
+// ==========================================
+@mixin scotch-tape {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 90px;
+    height: 28px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(230,230,230,0.7));
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2), inset 0 0 8px rgba(255,255,255,0.8);
+    clip-path: polygon(0% 10%, 5% 0%, 95% 0%, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0% 90%);
+    z-index: 30;
+    pointer-events: none;
+}
+
+// ==========================================
+// TITRES (H1 & H2 CENTRÉS SELON MAQUETTE)
+// ==========================================
 .titre-principal {
-    font-family: $font-serif;
-    text-align: center;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    padding: 80px 10% 40px;
+    text-align: center; 
+    margin: 80px 0 40px;
+    font-family: $fonteSecondaire;
+    font-size: 64px; 
+    font-weight: 500; 
     color: $brunFonce;
 }
 
 .section__titre {
-    font-family: $font-serif;
-    font-size: 2.8rem;
-    text-align: center;
+    font-family: $fonteSecondaire;
+    font-size: 48px; 
+    font-weight: 500;
+    text-align: center; 
     margin-bottom: 50px;
+    color: $brunFonce;
 }
 
-/* --- Section NOUVELLES --- */
+// ==========================================
+// BOUTONS (INTER SEMI-BOLD 20PX)
+// ==========================================
+.btn-voir-plus {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 22px;
+    background-color: $jaune;
+    color: $brunFonce !important;
+    text-transform: uppercase;
+    font-family: $fontePrimaire;
+    font-size: 20px; 
+    font-weight: 600; 
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &::after { content: " \2192"; margin-left: 8px; }
+    &:hover { background-color: darken($jaune, 8%); transform: translateX(3px); }
+}
+
+.btn-beige {
+    display: inline-block;
+    width: fit-content;
+    white-space: nowrap;
+    padding: 12px 25px;
+    background-color: $creme;
+    color: $brunFonce !important;
+    font-family: $fontePrimaire;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    transition: all 0.2s ease;
+
+    &:hover { background-color: $brunPale; color: white !important; }
+}
+
+// ==========================================
+// NOUVELLES
+// ==========================================
 .nouvelles {
-    padding: 60px 10%;
-    
+    padding: 80px 0;
     &__grille {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        display: flex;
+        justify-content: center;
         gap: 40px;
-        justify-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-wrap: wrap;
     }
 }
 
 .carte-polaroid {
-    background: #fff;
-    padding: 15px 15px 40px 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    max-width: 350px;
+    background: $brunPale;
+    padding: 0;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+    width: 310px;
+    position: relative;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    cursor: pointer;
 
-    &:hover { transform: rotate(-1deg) translateY(-5px); }
+    &::before { @include scotch-tape; }
+    &:nth-child(1), &:nth-child(2), &:nth-child(3) { transform: rotate(0deg); }
+
+
+    &:hover {
+        transform: rotate(3deg) scale(1.05); 
+        box-shadow: 15px 20px 30px rgba(0,0,0,0.2);
+
+        &::before {
+            opacity: 0.8;
+        }
+    }
 
     .polaroid__image {
-        width: 100%;
-        height: 250px;
-        overflow: hidden;
-        border: 1px solid #eee;
-        
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        background: white;
+        margin: 15px;
+        padding: 10px 10px 35px 10px;
+        border: 1px solid #ccc;
+        img { width: 100%; height: 180px; object-fit: cover; display: block; }
     }
 
     .polaroid__texte {
-        padding: 20px 10px;
-        p {
-            font-size: 1.1rem;
-            line-height: 1.4;
-            margin-bottom: 20px;
-            min-height: 60px;
+        padding: 0 20px 25px;
+        p { 
+            font-family: $fontePrimaire; 
+            font-size: 20px; 
+            font-weight: 400;
+            color: $brunFonce; 
+            margin-bottom: 15px; 
         }
     }
 }
 
-.btn-voir-plus {
-    display: inline-block;
-    border: 1px solid $brunFonce;
-    padding: 10px 30px;
-    text-decoration: none;
-    color: $brunFonce;
-    background: $brunPale;
-    font-weight: bold;
-    font-size: 1rem;
-    transition: all 0.2s;
-
-    &:hover {
-        background: $brunFonce;
-        color: #fff;
-    }
-}
-
-/* --- Section À PROPOS  --- */
+// ==========================================
+// À PROPOS
+// ==========================================
 .a-propos {
-    padding: 100px 15%;
-    display: flex;
-    align-items: center;
-    gap: 80px;
-
-    &__texte {
-        flex: 1;
-        h2 { font-family: $font-serif; font-size: 2.5rem; margin-bottom: 25px; }
-        p { font-size: 1.2rem; line-height: 1.7; }
+    background: $brunFonce;
+    color: white;
+    padding: 80px 0;
+    &__contenu { display: flex; max-width: 1100px; margin: 0 auto; align-items: center; gap: 60px; padding: 0 40px; }
+    &__texte { 
+        flex: 1; 
+        h2 { 
+            font-family: $fonteSecondaire; 
+            font-size: 48px; 
+            font-weight: 500; 
+            margin-bottom: 20px; 
+        } 
+        p { 
+            font-family: $fontePrimaire;
+            font-size: 20px;
+            line-height: 1.6; 
+            opacity: 0.9; 
+        } 
     }
-
     &__images {
         flex: 1;
         position: relative;
-        height: 450px;
-        
-        img {
-            width: 320px;
-            height: auto;
-            border: 12px solid #fff;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            position: absolute;
-        }
-
-        .img-inclinee-1 {
-            top: 0;
-            left: 0;
-            transform: rotate(-8deg);
-            z-index: 1;
-        }
-
-        .img-inclinee-2 {
-            top: 140px;
-            left: 100px;
-            transform: rotate(4deg);
-            z-index: 2;
-        }
+        height: 350px;
+        .img-wrapper { position: absolute; &::before { @include scotch-tape; width: 70px; } }
+        img { width: 280px; height: 190px; object-fit: cover; border: 10px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .img-inclinee-1 { top: 0; left: 0; transform: rotate(-8deg); }
+        .img-inclinee-2 { top: 90px; left: 80px; transform: rotate(6deg); }
     }
 }
 
-/* --- Section VOLET CULTUREL --- */
+// ==========================================
+// VOLET CULTUREL
+// ==========================================
 .volet-culturel {
-    padding: 100px 10% 150px;
-    text-align: center;
-
-    &__conteneur {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        position: relative;
-        padding-top: 40px;
-    }
-
+    padding: 140px 0 220px;
+    position: relative;
+    &__item { display: none; 
+        &.is-active { display: block; } }
+    &__conteneur { display: flex; align-items: center; max-width: 1100px; margin: 0 auto; position: relative; }
     &__images {
-        flex: 1;
-        position: relative;
-        height: 400px;
-
+        flex: 1; position: relative; height: 450px; z-index: 10;
         .img-polaroid {
-            background: #fff;
-            padding: 10px 10px 40px 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            position: absolute;
-            width: 280px;
-
-            img { width: 100%; height: 200px; object-fit: cover; }
-
-            &--base {
-                top: 0;
-                left: 0;
-                transform: rotate(-5deg);
-                z-index: 1;
+            background: white;
+             padding: 10px 10px 45px;
+              box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+               position: absolute; width: 290px;
+            &::before { @include scotch-tape;
+                 width: 80px;
+                 }
+            img { width: 100%; 
+                height: 200px; 
+                object-fit: cover; 
             }
-
-            &--dessus {
-                bottom: 0;
-                left: 120px;
-                transform: rotate(3deg);
-                z-index: 3;
-            }
+            &--base { 
+                top: 0; 
+                left: -30px; 
+                transform: rotate(-7deg);
+                 z-index: 1;
+                }
+            &--dessus { 
+                bottom: -20px; 
+                left: 120px; transform:
+                 rotate(5deg); z-index: 20;
+                 }
         }
     }
-
     &__bloc-info {
-        flex: 1.2;
-        background: $brunFonce;
-        color: #fff;
-        padding: 60px;
+        flex: 1.2; 
+        background: $brunFonce; 
+        color: white; 
+        padding: 60px 60px 60px 140px; 
         margin-left: -100px; 
-        z-index: 2;
-        text-align: left;
-        box-shadow: 10px 15px 40px rgba(0,0,0,0.3);
+        z-index: 5;
+        min-height: 350px; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center;
 
-        h2 { font-family: $font-serif; font-size: 2.2rem; margin-bottom: 20px; }
-        p { font-size: 1.2rem; margin-bottom: 35px; opacity: 0.9; }
-
-        .btn-beige {
-            background: $creme;
-            color: $brunFonce;
-            padding: 15px 40px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            transition: background 0.2s;
-            &:hover { background: #fff; }
+        h2 { 
+            font-family: $fonteSecondaire; 
+            font-size: 36px; 
+            font-weight: 500; 
+            margin-bottom: 20px; 
+        }
+        p {
+            font-family: $fontePrimaire;
+            font-size: 20px;
+            line-height: 1.5; 
+            margin-bottom: 10px; 
         }
     }
 
     &__controles {
-        margin-top: 80px;
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
-        justify-content: center;
         align-items: center;
-        gap: 20px;
+        gap: 25px;
+        background-color: white; 
+        padding: 10px 25px;
+        border: 1px solid #999;
+        border-radius: 4px;
+        z-index: 100;
 
         .fleche {
-            font-size: 2rem;
-            cursor: pointer;
-            color: $brunFonce;
+            background: none; 
+            border: none; 
+            cursor: pointer; 
+            width: 20px;
+            height: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            &::after {
+                content: "";
+                width: 12px;
+                height: 12px;
+                border-top: 3px solid $brunFonce;
+                border-right: 3px solid $brunFonce;
+                position: absolute;
+                transition: all 0.2s ease;
+            }
+
+            &#prevVolet::after {
+                transform: rotate(-135deg); 
+                left: 5px;
+            }
+
+            &#nextVolet::after {
+                transform: rotate(45deg); 
+                right: 5px;
+            }
+            
+            &:hover::after {
+                border-color: $jaune;
+            }
         }
 
+        .points-container { display: flex; 
+            gap: 12px; 
+            align-items: center;
+         }
         .point {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            border: 2px solid $jaune;
-            cursor: pointer;
-
-            &--actif { background: $jaune; }
+            width: 10px;
+             height: 10px;
+              border-radius: 50%;
+               background-color: $jaune;
+                cursor: pointer;
+                    &--actif { 
+                        background-color: $brunFonce;
+                         transform: rotate(45deg);
+                          border-radius: 2px; 
+                        }
         }
-    }
-}
-
-/* --- Adaptations Mobile (Responsive) --- */
-@media (max-width: 1024px) {
-    .a-propos, .volet-culturel__conteneur {
-        flex-direction: column;
-        gap: 50px;
-    }
-    
-    .a-propos__images, .volet-culturel__images {
-        height: 350px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        
-        img, .img-polaroid { position: relative; left: 0 !important; top: 0 !important; }
-    }
-
-    .volet-culturel__bloc-info {
-        margin-left: 0;
-        margin-top: -40px;
-        width: 100%;
     }
 }
