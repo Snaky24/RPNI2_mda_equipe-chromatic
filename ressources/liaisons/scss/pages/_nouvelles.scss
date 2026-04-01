@@ -305,17 +305,19 @@
 }
 
 .single-nouvelle__intro {
-	max-width: 980px;
+	width: 850.166px;
+	height: 347.36px;
+	max-width: 100%;
 	margin: 0 auto 5rem auto;
 	font-size: 1.9rem;
 	line-height: 1.8;
-	color: #4a3a2f;
+	color: #ffffff;
 	text-align: left;
-	background: #ffffff;
-	border: 1px solid #e7dccd;
-	border-radius: 1rem;
+	background: #4B4032;
+	border-radius: 15px;
 	padding: 3rem 3.2rem;
-	box-shadow: 0 8px 20px rgba(44, 36, 29, 0.08);
+	box-shadow: 15px 15px 4px 0 rgba(0, 0, 0, 0.25);
+	overflow: auto;
 }
 
 .single-nouvelle__intro > :first-child {
@@ -334,7 +336,7 @@
 	margin: 2.4rem 0 1.2rem;
 	font-size: 2.8rem;
 	line-height: 1.25;
-	color: #2f2924;
+	color: #ffffff;
 }
 
 .single-nouvelle__intro ul {
@@ -347,7 +349,7 @@
 }
 
 .single-nouvelle__intro strong {
-	color: #2f2924;
+	color: #ffffff;
 }
 
 .single-nouvelle__bloc {
@@ -498,6 +500,8 @@
 	}
 
 	.single-nouvelle__intro {
+		width: 100%;
+		height: auto;
 		padding: 2.2rem 1.8rem;
 		font-size: 1.75rem;
 	}
