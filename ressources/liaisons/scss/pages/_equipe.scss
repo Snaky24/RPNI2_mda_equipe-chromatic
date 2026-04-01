@@ -1,0 +1,201 @@
+.page .article .article__texte {
+    background-color: #4B4032;
+    border-radius: 15px;
+    width: 80%;
+    margin: 0 auto;   /* centre l'élément */
+    padding: 20px;    /* optionnel mais recommandé */
+    color: #EDE0D0;
+}
+.retourFiches {
+    display: flex;
+    width: 21.25rem;
+    height: 5rem;
+    padding: 0.625rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    margin: 0 auto;
+
+    border-radius: 0.375rem;
+    border: 2px solid #4B4032;
+    background: #4B4032;
+}
+@media (min-width: 601px) {
+    .retourFiches {
+        display: flex;
+        width: 25.3125rem;
+        height: 5rem;
+        padding: 0.625rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.625rem;
+        margin: 1rem 1rem 1rem 8.5rem;
+    
+        border-radius: 0.375rem;
+        border: 2px solid #4B4032;
+        background: #4B4032;
+    }
+}
+.article__entete {
+    width: 24.25rem;
+    height: 6.1875rem;
+
+    color: #000;
+    background-color: transparent;
+
+    text-align: center;
+    /* final/mobile/titre */
+    font-family: "LT Museum";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 3.125rem; /* 156.25% */
+    margin: 0 auto;
+}
+
+.precedentFiche {
+    display: flex;
+    width: 9.9375rem;
+    height: 4.375rem;
+    padding: 0.625rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+
+    border-radius: 0.375rem;
+    border: 2px solid #4B4032;
+}
+@media (min-width: 601px) {
+    .precedentFiche {
+        display: flex;
+        width: 25.25rem;
+        height: 5rem;
+        padding: 0.625rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.625rem;
+    }
+}
+
+.article__lienP {
+    color: #4B4032;
+
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.suivantFiche {
+    display: flex;
+    width: 9.9375rem;
+    height: 4.375rem;
+    padding: 0.625rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    
+    border-radius: 0.375rem;
+    background: #4B4032;
+}
+@media (min-width: 601px) {
+    .suivantFiche {
+        display: flex;
+        width: 25.3125rem;
+        height: 5rem;
+        padding: 0.625rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.625rem;
+    }
+}
+.article__lien {
+    color: #EDE0D0;
+
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.navigation-fiches {
+    display: flex;
+    width: 21.25rem;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.94rem auto;
+}
+@media (min-width: 601px) {
+    .navigation-fiches {
+        display: inline-flex;
+        gap: 11.875rem;
+        margin: 2.94rem 1rem 1rem 8.5rem;
+    }
+}
+
+
+
+
+.article_Equipe {
+    display: flex;
+    height: 39.5rem;
+    padding-bottom: 1.375rem;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    margin-bottom: 2rem;
+
+    border: 1px solid #000;
+    background: #4B4032;
+
+    color: #EDE0D0;
+}
+.article__enteteEquipe {
+    color: #EDE0D0;
+
+    text-align: center;
+    font-family: "LT Museum";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    
+    width: 18.34075rem;
+    height: 1.95156rem;
+}
+.article__texteEquipe {
+    // display: flex;
+    // flex-direction: column;
+    width: 16.45063rem;
+    height: 3.01131rem;
+
+    color: #EDE0D0;
+
+    font-family: "LT Museum";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 2rem auto 5rem auto;
+}
+.savoirPlus {
+    display: flex;
+    width: 18.34075rem;
+    height: 3.27363rem;
+    padding: 0.75rem 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #E8D8C4;
+}
+.savoirPlus_lien {
+    color: var(--black, #1B1B1B);
+    text-align: center;
+    /* bouton */
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5rem; /* 120% */
+    letter-spacing: 0.0125rem;
+}

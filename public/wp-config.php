@@ -1,4 +1,9 @@
 <?php
+define('COOKIEPATH', '/');
+define('SITECOOKIEPATH', '/');
+define('ADMIN_COOKIE_PATH', '/');
+define('WP_HOME', 'http://localhost:8888/rpni2/RPNI2_mda_equipe_chromatic/public');
+define('WP_SITEURL', 'http://localhost:8888/rpni2/RPNI2_mda_equipe_chromatic/public');
 /**
  * The base configuration for WordPress
  *
