@@ -203,10 +203,11 @@ function polaroid_gallery_enqueue() {
 		// detect PC user 
 		if (!isMobileDetected()){
 			// add javascript to footer
-			wp_enqueue_script('jquery.easing-1.3', ('//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'), array('jquery'), false, true);
-			wp_enqueue_script('jquery.mousewheel-3.0.4', ('//cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.mousewheel-3.0.4.pack.js'), array('jquery'), false, true);
-			wp_enqueue_script('jquery.fancybox-1.3.4', ('//cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js'), array('jquery'), false, true);
-			wp_enqueue_script('polaroid_gallery-2.1', ($polaroid_gallery_plugin_prefix.'js/polaroid_gallery-2.1.min.js'), array('jquery'), false, true);
+			wp_enqueue_script('jquery.easing-1.3', ($polaroid_gallery_plugin_prefix . 'js/jquery.easing-1.3.pack.js'), array('jquery'), '1.3', true);
+			wp_enqueue_script('jquery.browser-shim', ($polaroid_gallery_plugin_prefix . 'js/jquery.browser-shim.js'), array('jquery'), '1.0.0', true);
+			wp_enqueue_script('jquery.mousewheel-3.0.6', ($polaroid_gallery_plugin_prefix . 'js/jquery.mousewheel-3.0.6.pack.js'), array('jquery'), '3.0.6', true);
+			wp_enqueue_script('jquery.fancybox-1.3.4', ($polaroid_gallery_plugin_prefix . 'js/jquery.fancybox-1.3.4.pack.js'), array('jquery', 'jquery.browser-shim', 'jquery.mousewheel-3.0.6'), '1.3.4', true);
+			wp_enqueue_script('polaroid_gallery-2.1', ($polaroid_gallery_plugin_prefix.'js/polaroid_gallery-2.1.min.js'), array('jquery', 'jquery.fancybox-1.3.4'), false, true);
 
 			// add css to head
 			wp_enqueue_style('polaroid_gallery_fancybox', ($polaroid_gallery_plugin_prefix . 'css/jquery.fancybox-1.3.4.min.css'));
