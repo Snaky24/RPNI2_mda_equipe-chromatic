@@ -3,7 +3,7 @@
 get_header();
 ?>
 
-<main class="page-nouvelles" id="contenu-principal">
+<main class="page-nouvelles">
 
     <?php
     $requete_nouvelles = new WP_Query(array(
@@ -15,10 +15,9 @@ get_header();
     ));
     ?>
 
-    <section class="page-nouvelles__liste" aria-labelledby="nouvelles-liste-titre">
-        <h2 id="nouvelles-liste-titre" class="section__titre page-nouvelles__liste-titre">Nouvelles</h2>
+    <section class="page-nouvelles__liste">
         <?php if ($requete_nouvelles->have_posts()) : ?>
-            <ul class="nouvelles-grid" role="list">
+            <div class="nouvelles-grid">
 
                 <?php while ($requete_nouvelles->have_posts()) : $requete_nouvelles->the_post(); ?>
                     <?php
@@ -30,26 +29,31 @@ get_header();
                     );
 
                     $titre_courant = trim(wp_strip_all_tags(get_the_title()));
+                    $titre_courant_normalise = str_replace(array('’', '‘', '`'), "'", $titre_courant);
+                    $titre_courant_slug = sanitize_title($titre_courant_normalise);
 
                     $date_nouvelle = get_post_meta(get_the_ID(), 'date_nouvelle', true);
                     $date_affichee = !empty($date_nouvelle)
                         ? $date_nouvelle
                         : wp_date('j F Y', get_post_timestamp(get_the_ID(), 'date'));
-                    $date_iso = get_post_time('c', true);
-                    $url_nouvelle = get_permalink();
 
-                    if (isset($dates_par_titre[$titre_courant])) {
-                        $date_affichee = $dates_par_titre[$titre_courant];
+                    foreach ($dates_par_titre as $titre_reference => $date_reference) {
+                        $titre_reference_normalise = str_replace(array('’', '‘', '`'), "'", $titre_reference);
+                        $titre_reference_slug = sanitize_title($titre_reference_normalise);
+
+                        if ($titre_reference_normalise === $titre_courant_normalise || $titre_reference_slug === $titre_courant_slug) {
+                            $date_affichee = $date_reference;
+                            break;
+                        }
                     }
                     ?>
-                    <li class="nouvelles-grid__item">
                     <article class="nouvelle-carte">
 
-                        <a class="nouvelle-carte__image-lien" href="<?php echo esc_url($url_nouvelle); ?>" aria-label="<?php echo esc_attr('Lire la nouvelle : ' . $titre_courant); ?>">
+                        <a class="nouvelle-carte__image-lien" href="<?php the_permalink(); ?>">
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail('medium_large', array('class' => 'nouvelle-carte__image')); ?>
                             <?php else : ?>
-                                <span class="nouvelle-carte__image-placeholder" aria-hidden="true"></span>
+                                <span class="nouvelle-carte__image-placeholder"></span>
                             <?php endif; ?>
                         </a>
 
@@ -70,11 +74,11 @@ get_header();
                                         </defs>
                                     </svg>
                                 </span>
-                                <time datetime="<?php echo esc_attr($date_iso); ?>"><?php echo esc_html($date_affichee); ?></time>
+                                <span><?php echo esc_html($date_affichee); ?></span>
                             </p>
 
                             <h2 class="nouvelle-carte__titre">
-                                <a href="<?php echo esc_url($url_nouvelle); ?>">
+                                <a href="<?php the_permalink(); ?>">
                                     <?php the_title(); ?>
                                 </a>
                             </h2>
@@ -83,22 +87,20 @@ get_header();
                                 <?php the_excerpt(); ?>
                             </div>
 
-                            <a class="nouvelle-carte__bouton" href="<?php echo esc_url($url_nouvelle); ?>" aria-label="<?php echo esc_attr('Lire la suite de : ' . $titre_courant); ?>">
+                            <a class="nouvelle-carte__bouton" href="<?php the_permalink(); ?>">
                                 LIRE LA SUITE →
                             </a>
                         </div>
 
                     </article>
-                    </li>
                 <?php endwhile; ?>
 
-            </ul>
+            </div>
 
             <?php wp_reset_postdata(); ?>
         <?php else : ?>
-            <ul class="nouvelles-grid nouvelles-grid--statique" role="list">
+            <div class="nouvelles-grid nouvelles-grid--statique">
 
-                <li class="nouvelles-grid__item">
                 <article class="nouvelle-carte nouvelle-carte--statique">
                     <div class="nouvelle-carte__contenu">
                         <p class="nouvelle-carte__date">20 novembre 2025</p>
@@ -122,9 +124,7 @@ get_header();
                         </div>
                     </div>
                 </article>
-                </li>
 
-                <li class="nouvelles-grid__item">
                 <article class="nouvelle-carte nouvelle-carte--statique">
                     <div class="nouvelle-carte__contenu">
                         <p class="nouvelle-carte__date">4 décembre 2025</p>
@@ -147,9 +147,7 @@ get_header();
                         </div>
                     </div>
                 </article>
-                </li>
 
-                <li class="nouvelles-grid__item">
                 <article class="nouvelle-carte nouvelle-carte--statique">
                     <div class="nouvelle-carte__contenu">
                         <p class="nouvelle-carte__date">5 janvier 2026</p>
@@ -172,9 +170,7 @@ get_header();
                         </div>
                     </div>
                 </article>
-                </li>
 
-                <li class="nouvelles-grid__item">
                 <article class="nouvelle-carte nouvelle-carte--statique">
                     <div class="nouvelle-carte__contenu">
                         <p class="nouvelle-carte__date">19 janvier 2026</p>
@@ -191,9 +187,8 @@ get_header();
                         </div>
                     </div>
                 </article>
-                </li>
 
-            </ul>
+            </div>
         <?php endif; ?>
     </section>
 
