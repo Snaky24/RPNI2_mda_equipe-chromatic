@@ -17,8 +17,8 @@ $retour_nouvelles_url = !empty($page_nouvelles)
     <?php if (have_posts()) : the_post(); ?>
 
     <?php
-    // Suivant = article plus ancien (on part du plus récent vers le plus ancien)
-    // Précédent = article plus récent (disponible seulement après avoir cliqué Suivant)
+    // Suivant 
+    // Précédent 
     $nouvelle_suivante   = get_previous_post();
     $nouvelle_precedente = get_next_post();
     $date_nouvelle       = get_post_meta(get_the_ID(), 'date_nouvelle', true);
@@ -105,23 +105,10 @@ HTML
     );
 
     $contenu_personnalise = '';
-    $titre_courant_normalise = str_replace(array('’', '‘', '`'), "'", $titre_courant);
-    $titre_courant_slug = sanitize_title($titre_courant_normalise);
 
     if (isset($nouvelles_contenu[$titre_courant])) {
         $date_affichee = $nouvelles_contenu[$titre_courant]['date'];
         $contenu_personnalise = $nouvelles_contenu[$titre_courant]['contenu'];
-    } else {
-        foreach ($nouvelles_contenu as $titre_reference => $donnees_reference) {
-            $titre_reference_normalise = str_replace(array('’', '‘', '`'), "'", $titre_reference);
-            $titre_reference_slug = sanitize_title($titre_reference_normalise);
-
-            if ($titre_reference_normalise === $titre_courant_normalise || $titre_reference_slug === $titre_courant_slug) {
-                $date_affichee = $donnees_reference['date'];
-                $contenu_personnalise = $donnees_reference['contenu'];
-                break;
-            }
-        }
     }
     ?>
 
