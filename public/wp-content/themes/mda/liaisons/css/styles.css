@@ -1359,7 +1359,6 @@ picture {
    PAGE NOUVELLES
 ========================= */
 .page-nouvelles {
-  background: #ece3d1;
   padding: 6rem 0 8rem 0;
 }
 
@@ -1573,7 +1572,7 @@ picture {
 	SINGLE NOUVELLE
 ========================= */
 .single-nouvelle {
-  background: transparent;
+  background: #f6f1e8;
   padding-bottom: 8rem;
 }
 
