@@ -204,6 +204,9 @@ function prefix_remove_default_images ( $sizes ) {
 if(function_exists ( "add_image_size" )){
     add_image_size( "image-single", 768, 432, true);
     add_image_size( "image-bande", 1000, 320, true);
+    add_image_size( "EquipeTable", 363.55, 295.85, true);
+    add_image_size( "EquipeMobile", 313.02, 295.85, true);
+    add_image_size( "Equipes", 279, 227.05, true);
 }
 
 /* Désactivation de la compression automatique des images */
