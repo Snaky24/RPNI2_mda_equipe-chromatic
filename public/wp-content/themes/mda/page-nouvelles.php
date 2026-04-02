@@ -30,8 +30,6 @@ get_header();
                     );
 
                     $titre_courant = trim(wp_strip_all_tags(get_the_title()));
-                    $titre_courant_normalise = str_replace(array('’', '‘', '`'), "'", $titre_courant);
-                    $titre_courant_slug = sanitize_title($titre_courant_normalise);
 
                     $date_nouvelle = get_post_meta(get_the_ID(), 'date_nouvelle', true);
                     $date_affichee = !empty($date_nouvelle)
@@ -40,14 +38,8 @@ get_header();
                     $date_iso = get_post_time('c', true);
                     $url_nouvelle = get_permalink();
 
-                    foreach ($dates_par_titre as $titre_reference => $date_reference) {
-                        $titre_reference_normalise = str_replace(array('’', '‘', '`'), "'", $titre_reference);
-                        $titre_reference_slug = sanitize_title($titre_reference_normalise);
-
-                        if ($titre_reference_normalise === $titre_courant_normalise || $titre_reference_slug === $titre_courant_slug) {
-                            $date_affichee = $date_reference;
-                            break;
-                        }
+                    if (isset($dates_par_titre[$titre_courant])) {
+                        $date_affichee = $dates_par_titre[$titre_courant];
                     }
                     ?>
                     <li class="nouvelles-grid__item">

@@ -1,105 +1,81 @@
 <?php
-/* Template name: Volets culturels */
-get_header(); //Appel de l'inclusion d'entête de page
+/* Template Name: Volets culturels */
+get_header();
 ?>
 
-<main class="page-voletsculturels">
-    <div class="contenu-page">
-        <?php the_content(); ?>
-    </div>
-    <div class="nouvelles__grille">
-        <?php
-        $query_news = new WP_Query([
-            'post_type'      => 'nouvelles',
-            'posts_per_page' => 3
-        ]);
-        if ($query_news->have_posts()) {
-            while ($query_news->have_posts()) {
-                $query_news->the_post(); ?>
-                <article class="carte-polaroid">
-                    <div class="polaroid__image">
-                        <?php if (has_post_thumbnail()) {
-                            the_post_thumbnail('large');
-                        } else { ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/placeholder.jpg" alt="Image par défaut">
-                        <?php } ?>
-                    </div>
-                    <div class="polaroid__texte">
-                        <p><?php echo wp_trim_words(get_the_excerpt(), 12); ?></p>
-                        <a href="<?php the_permalink(); ?>" class="btn-voir-plus">Voir plus</a>
-                    </div>
-                </article>
-        <?php }
-            wp_reset_postdata();
-        } ?>
-    </div>
-    <?php
-    // Utiliser le code ci-dessous pour créer une image responsive
-    if (has_post_thumbnail()) {
-        $sizes = array();
-        $sizes[0] = wp_get_attachment_image_src(get_post_thumbnail_id(), "large");
-        $sizes[1] = wp_get_attachment_image_src(get_post_thumbnail_id(), "medium");
-        $sizes[2] = wp_get_attachment_image_src(get_post_thumbnail_id(), "thumbnail"); ?>
-        <picture>
-            <source media="(min-width: 801px)" srcset="<?php echo $sizes[0][0]; ?>">
-            <source media="(min-width: 601px)" srcset="<?php echo $sizes[1][0]; ?>">
-            <img src="<?php echo $sizes[2][0]; ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
-        </picture>
-    <?php } ?>
+<main class="site-main page-voletsculturels">
 
-    <?php
-    //Requête et boucle d'affichage des articles avec ACF
-    //À mettre dans les pages utilisant les articles personnalisés et adapter****************
-    $posts = get_posts(array(
-        'posts_per_page' => -1,
-        'post_type'    => 'voletsculturels',
-        'post_status' => 'publish',
-        'orderby' => 'the_title',
-        'order' => 'ASC',
-    ));
-    ?>
+    <nav class="breadcrumb">
+        <a href="<?php echo esc_url(home_url('/')); ?>">Accueil</a> >
+        <span>Volets culturels</span>
+    </nav>
 
-    <?php if (have_posts()) { ?>
-        <div class="articles-grid">
-            <?php foreach ($posts as $post) { ?>
-                <article class="article-volets">
-                    <?php
-
-                    $image_info = get_field("photo_1");
-
-                    //Si l'image est définie dans ACF
-                    if ($image_info != null) {
-
-                        //Utiliser la balise picture pour le redimensionnement de l'image 
-                    ?>
-                        <picture class="picture-nom_volet-volets">
-                            <source media="(min-width: 800px)" srcset="<?php echo $image_info['sizes']["large"]; ?>">
-                            <source media="(min-width: 601px)" srcset="<?php echo $image_info['sizes']["medium"]; ?>">
-                            <img src="<?php echo $image_info['sizes']['thumbnail']; ?>" alt="<?php echo $image_info["alt"]; ?>">
-                        </picture>
-
-                    <?php } ?>
-                    <div class="article__fond-volets">
-                        <header class="article__entete-volets">
-                            <h2 class="article__titre-volets">
-                                <?php //affiche le lien et le titre de l'article'
-                                ?>
-                                <p class="article__lien-volets"><?php the_title() ?></p>
-                            </h2>
-                        </header>
-                        <div class="article__btn-volets">
-                            <a class="btn__a-volets" href="<?php the_permalink(); ?>">
-                                <button class="article__a-volets">En savoir plus</button>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-        <?php }
-
-            //réinitialise les données reçues par défaut du gabarit pour afficher le
-            //reste des informations de la page, s'il y a lieu
-            //wp_reset_postdata();
-        } ?>
+    <section class="section-intro">
+        <div class="section-intro__contenu">
+            <?php the_content(); ?>
         </div>
+    </section>
+
+    <section class="volets-culturels">
+
+        <div class="volets-culturels__grille">
+            <?php
+            $query_volets = new WP_Query([
+                'post_type'      => 'voletsculturels',
+                'posts_per_page' => -1,
+                'post_status'    => 'publish',
+                'orderby'        => 'menu_order',
+                'order'          => 'ASC',
+            ]);
+
+            if ($query_volets->have_posts()) :
+                while ($query_volets->have_posts()) :
+                    $query_volets->the_post();
+
+                    $photo_base   = get_field('photo_1');
+                    $photo_dessus = get_field('photo_2');
+            ?>
+                    <article class="carte-polaroid volet-culturel__carte">
+                        <div class="polaroid__image volet-culturel-polaroid__image">
+                            <?php
+                            // Image principale : ACF photo_1, sinon image à la une, sinon placeholder
+                            if ($photo_base) {
+                                echo wp_get_attachment_image(
+                                    is_array($photo_base) ? $photo_base['ID'] : $photo_base,
+                                    'large'
+                                );
+                            } elseif (has_post_thumbnail()) {
+                                the_post_thumbnail('large');
+                            } else { ?>
+                                <img class="img-polaroid" src="<?php echo esc_url(get_template_directory_uri()); ?>/liaisons/images/placeholder.jpg" alt="Image par défaut">
+                            <?php } ?>
+                        </div>
+
+                        <?php if ($photo_dessus) : ?>
+                            <div class="polaroid__image polaroid__image--overlay">
+                                <?php
+                                echo wp_get_attachment_image(
+                                    is_array($photo_dessus) ? $photo_dessus['ID'] : $photo_dessus,
+                                    'large'
+                                );
+                                ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <div class="polaroid__texte">
+                            <h3 class="volet-culturel__titre"><?php the_title(); ?></h3> 
+                            <a href="<?php the_permalink(); ?>" class="btn-volet">Voir plus</a>
+                        </div>
+                    </article>
+                <?php
+                endwhile;
+                wp_reset_postdata();
+            else : ?>
+                <p>Aucun volet culturel n’est disponible pour le moment.</p>
+            <?php endif; ?>
+        </div>
+    </section>
+
 </main>
-<?php get_footer() ?>
+
+<?php get_footer(); ?>
