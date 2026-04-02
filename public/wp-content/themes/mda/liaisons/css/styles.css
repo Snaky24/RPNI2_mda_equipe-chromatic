@@ -1057,7 +1057,7 @@ body {
   background: #C6A477;
   padding: 0;
   box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.1);
-  width: 310px;
+  width: 70%;
   position: relative;
   text-align: center;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
@@ -1361,35 +1361,6 @@ body {
 }
 
 /* ----------------------------- */
-/* HERO                         */
-/* ----------------------------- */
-.hero-volets {
-  position: relative;
-  width: 100%;
-  height: 380px;
-  overflow: hidden;
-}
-
-.hero-volets__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-volets__titre {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  text-transform: uppercase;
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* ----------------------------- */
 /* BREADCRUMB                    */
 /* ----------------------------- */
 .breadcrumb {
@@ -1404,52 +1375,30 @@ body {
   text-decoration: none;
 }
 
+.page-voletsculturels {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
 /* ----------------------------- */
 /* INTRO                         */
 /* ----------------------------- */
 .section-intro {
   width: 90%;
   margin: 40px auto;
-  text-align: center;
+  text-align: left;
 }
 
 .section-intro h2 {
-  font-size: 2rem;
+  font-size: 60px;
   margin-bottom: 20px;
 }
 
 .section-intro .intro__texte {
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
   line-height: 1.6;
-}
-
-/* ----------------------------- */
-/* DÉCOUVERTE DES VOLETS         */
-/* ----------------------------- */
-.decouverte {
-  width: 90%;
-  margin: 60px auto 20px;
-  text-align: center;
-}
-
-.decouverte__titre {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.decouverte__icones {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-}
-
-.decouverte__icones .icone {
-  background: #f7f3ec;
-  padding: 20px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1rem;
 }
 
 /* ----------------------------- */
@@ -1457,55 +1406,55 @@ body {
 /* ----------------------------- */
 .volets-cartes {
   width: 90%;
-  margin: 40px auto 80px;
 }
 
-.volets-cartes__grille {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 35px;
-}
-
-.volet-carte {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
+.volet-culturel__carte {
+  background: #4B4032;
+  border-radius: 6px;
   text-align: center;
-  padding-bottom: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease;
 }
 
-.volet-carte:hover {
-  transform: translateY(-6px);
-}
-
-.volet-carte__image img {
+.volet-culturel-polaroid__image img {
   width: 100%;
-  height: 220px;
+  height: fit-content;
   object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-.volet-carte__titre {
-  font-size: 1.2rem;
-  margin: 20px 0 10px;
-  font-weight: 700;
+.volet-culturel__titre {
+  font-size: 25px;
+  margin: 20px;
 }
 
 .btn-volet {
   display: inline-block;
   margin-top: 10px;
+  width: 100%;
   padding: 10px 22px;
-  background: #d8c3a5;
+  background: #EFA646;
   color: #000;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
   transition: background 0.2s ease;
 }
 
 .btn-volet:hover {
-  background: #c7b299;
+  background: #f4b25c;
+  cursor: pointer;
+}
+
+.volets-culturels__grille {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+  justify-items: center;
+  margin: 0;
+}
+
+.polaroid__texte {
+  background-color: #fff;
+  margin: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* =========================

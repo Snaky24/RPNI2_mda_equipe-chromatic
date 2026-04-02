@@ -36,7 +36,7 @@ get_header();
                     $photo_dessus = get_field('photo_2');
             ?>
                     <article class="carte-polaroid volet-culturel__carte">
-                        <div class="polaroid__image">
+                        <div class="polaroid__image volet-culturel-polaroid__image">
                             <?php
                             // Image principale : ACF photo_1, sinon image à la une, sinon placeholder
                             if ($photo_base) {
@@ -47,7 +47,7 @@ get_header();
                             } elseif (has_post_thumbnail()) {
                                 the_post_thumbnail('large');
                             } else { ?>
-                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/liaisons/images/placeholder.jpg" alt="Image par défaut">
+                                <img class="img-polaroid" src="<?php echo esc_url(get_template_directory_uri()); ?>/liaisons/images/placeholder.jpg" alt="Image par défaut">
                             <?php } ?>
                         </div>
 
@@ -64,7 +64,7 @@ get_header();
 
                         <div class="polaroid__texte">
                             <h3 class="volet-culturel__titre"><?php the_title(); ?></h3> 
-                            <a href="<?php the_permalink(); ?>" class="btn-voir-plus">En apprendre plus</a>
+                            <a href="<?php the_permalink(); ?>" class="btn-volet">Voir plus</a>
                         </div>
                     </article>
                 <?php
