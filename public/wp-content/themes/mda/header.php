@@ -55,11 +55,14 @@
 
         <!-- OVERLAY -->
         <div class="entete__contenu">
-            <h1 class="entete__slogan">
-                « Un lieu vivant où culture, patrimoine et communauté se rencontrent. »
-            </h1>
-
-            <a href="#" class="entete__btn">Voir plus</a>
+            <?php if (is_page_template('page-nouvelles.php')) : ?>
+                <h1 class="entete__titre-page"><?php echo esc_html(get_the_title()); ?></h1>
+            <?php else : ?>
+                <h1 class="entete__slogan">
+                    « Un lieu vivant où culture, patrimoine et communauté se rencontrent. »
+                </h1>
+                <a href="#" class="entete__btn">Voir plus</a>
+            <?php endif; ?>
         </div>
 
     </div>

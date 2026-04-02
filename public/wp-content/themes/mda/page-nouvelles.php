@@ -6,8 +6,6 @@ get_header();
 <main class="page-nouvelles">
 
     <section class="page-nouvelles__intro">
-        <h1 class="page-nouvelles__titre"><?php the_title(); ?></h1>
-
         <div class="page-nouvelles__description">
             <?php the_content(); ?>
         </div>
