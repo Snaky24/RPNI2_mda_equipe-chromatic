@@ -5,12 +5,6 @@ get_header();
 
 <main class="page-nouvelles">
 
-    <section class="page-nouvelles__intro">
-        <div class="page-nouvelles__description">
-            <?php the_content(); ?>
-        </div>
-    </section>
-
     <?php
     $requete_nouvelles = new WP_Query(array(
         'post_type'      => 'nouvelles',
