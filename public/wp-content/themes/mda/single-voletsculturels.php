@@ -42,10 +42,10 @@ get_header();
     <!-- Navigation Précédent / Suivant -->
     <div class="page-residence__nav">
         <div class="nav-prev">
-            <?php previous_post_link('%link', '← Précédent'); ?>
+            <?php previous_post_link('%link', 'Précédent'); ?>
         </div>
         <div class="nav-next">
-            <?php next_post_link('%link', 'Suivant →'); ?>
+            <?php next_post_link('%link', 'Suivant'); ?>
         </div>
     </div>
 
