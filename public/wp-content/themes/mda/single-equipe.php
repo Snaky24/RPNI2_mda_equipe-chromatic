@@ -10,10 +10,13 @@ echo "single-equipe.php";
     <?php the_post(); //nécessaire à the_author() et the_date()
     // var_dump($post); //Ce que reçoit la page
     ?>
-    <button class="retourFiches" type="button"><a class="article__lien" href="?page_id=39">Retour à l'Équipe</a></button>
+    <button class="retourFiches article__lien" type="button" onclick="window.location.href='?page_id=39'">
+    Retour à l'Équipe
+    </button>
     <header class="article__entete">
             <h2 class="article__titre"><?php the_title() ?></h2>
     </header>
+    
     <article class="article">
         
 
@@ -33,6 +36,22 @@ echo "single-equipe.php";
             }
         }
         ?>
+        <?php
+$image_info = get_field("photo_1");
+
+if ($image_info) :
+    $image_url = $image_info['sizes']['Equipes'];
+    $alt = $image_info['alt'];
+?>
+    <div class="equipe__img">
+        <img class="image-single" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($alt); ?>">
+    </div>
+
+<?php elseif (has_post_thumbnail()) : ?>
+    <div class="equipe__img">
+        <?php the_post_thumbnail('Equipes', array('class' => 'image-single')); ?>
+    </div>
+<?php endif; ?>
 
         
         <div class="article__texte"> 
@@ -52,9 +71,9 @@ echo "single-equipe.php";
 $prev_post = get_previous_post();
 if ($prev_post) :
 ?>
-    <button class="precedentFiche" type="button"><a class="article__lienP" href="<?php echo get_permalink($prev_post->ID); ?>">
+    <button class="precedentFiche article__lienP" type="button" onclick="window.location.href='<?php echo get_permalink($prev_post->ID); ?>'">
         Précédent
-    </a></button>
+    </button>
 <?php endif; ?>
 
 
@@ -62,9 +81,9 @@ if ($prev_post) :
 $next_post = get_next_post();
 if ($next_post) :
 ?>
-    <button class="suivantFiche" type="button"><a class="article__lien" href="<?php echo get_permalink($next_post->ID); ?>">
+    <button class="suivantFiche article__lien" type="button" onclick="window.location.href='<?php echo get_permalink($next_post->ID); ?>'">
         Suivant
-    </a></button>
+    </button>
 <?php endif; ?>
 
 </div>

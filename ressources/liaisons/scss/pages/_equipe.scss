@@ -1,3 +1,14 @@
+.image_nouvelles{
+    flex: 1;
+    z-index:4;
+    max-width:231px;
+    max-height:340px;
+    img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
 .page .article .article__texte {
     background-color: #4B4032;
     border-radius: 15px;
@@ -20,6 +31,21 @@
     border: 2px solid #4B4032;
     background: #4B4032;
 }
+.retourFiches:hover {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+}
+.retourFiches:active {
+    background: #C6A377;
+    color: #000;
+}
+.retourFiches:focus {
+    border: 4px solid #3F72FF;
+}
+
 @media (min-width: 601px) {
     .retourFiches {
         display: flex;
@@ -65,6 +91,20 @@
     border-radius: 0.375rem;
     border: 2px solid #4B4032;
 }
+.precedentFiche:hover {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+}
+.precedentFiche:active {
+    background: #C6A377;
+    color: #000;
+}
+.precedentFiche:focus {
+    border: 4px solid #3F72FF;
+}
 @media (min-width: 601px) {
     .precedentFiche {
         display: flex;
@@ -97,6 +137,20 @@
     
     border-radius: 0.375rem;
     background: #4B4032;
+}
+.suivantFiche:hover {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+}
+.suivantFiche:active {
+    background: #C6A377;
+    color: #000;
+}
+.suivantFiche:focus {
+    border: 4px solid #3F72FF;
 }
 @media (min-width: 601px) {
     .suivantFiche {
@@ -134,7 +188,18 @@
 }
 
 
-
+.Equipe {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 601px) {
+    .Equipe {
+        flex-direction: row;
+        justify-content: center;
+        gap: 6rem;
+        margin-top: 8rem;
+    }
+}
 
 .article_Equipe {
     display: flex;
@@ -151,33 +216,46 @@
 
     color: #EDE0D0;
 }
+.equipe__img {
+    width: 100%;
+    height: clamp(180px, 20vw, 260px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .equipe__img img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
 .article__enteteEquipe {
     color: #EDE0D0;
-
     text-align: center;
     font-family: "LT Museum";
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    
     width: 18.34075rem;
-    height: 1.95156rem;
+    /* height: 1.95156rem; */
 }
 .article__texteEquipe {
     // display: flex;
     // flex-direction: column;
     width: 16.45063rem;
-    height: 3.01131rem;
-
+    /* height: 3.01131rem; */
     color: #EDE0D0;
-
     font-family: "LT Museum";
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    margin: 2rem auto 5rem auto;
+    /* margin: 2rem auto 5rem auto; */
+    /* padding-top: 2rem; */
 }
 .savoirPlus {
     display: flex;
@@ -187,7 +265,22 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    background-color: #E8D8C4;
+    color: #000;
+    background: #C6A377;
+}
+.savoirPlus:hover {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+}
+.savoirPlus:active {
+    background: #C6A377;
+    color: #000;
+}
+.savoirPlus:focus {
+    border: 4px solid #3F72FF;
 }
 .savoirPlus_lien {
     color: var(--black, #1B1B1B);
