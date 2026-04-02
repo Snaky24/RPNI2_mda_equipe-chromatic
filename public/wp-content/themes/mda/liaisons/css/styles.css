@@ -454,7 +454,7 @@ template {
 }
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+  src: url("../fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
   font-weight: 100 900;
   font-display: swap;
 }
@@ -1359,7 +1359,6 @@ picture {
    PAGE NOUVELLES
 ========================= */
 .page-nouvelles {
-  background: #ece3d1;
   padding: 6rem 0 8rem 0;
 }
 
