@@ -1998,8 +1998,8 @@ picture {
   transform: translateY(-1px);
 }
 
-.single-nouvelle__btn-nav:visited,
-.single-nouvelle__btn-retour:visited {
+.single-nouvelle__btn-nav:visited:not(:hover):not(:active):not(:focus-visible),
+.single-nouvelle__btn-retour:visited:not(:hover):not(:active):not(:focus-visible) {
   color: #5a4638;
 }
 
