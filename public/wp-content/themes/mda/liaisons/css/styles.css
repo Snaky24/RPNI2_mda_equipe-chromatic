@@ -1686,25 +1686,24 @@ picture {
   height: 4.4802rem;
   margin: 0 auto;
   padding: 1.2rem 1.6rem;
-  background: #ffffff;
-  color: #2b2119;
+  background: #efa646;
+  color: #4a3428;
   font-size: 2rem;
   font-weight: 500;
   line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
-  border: 2px solid #2b2119;
+  border: none;
   box-sizing: border-box;
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.12s ease, box-shadow 0.2s ease;
 }
 
 .nouvelle-carte__bouton:hover {
-  background: #2b2119;
-  color: #ffffff;
+  background: #e39c3f;
 }
 
 .nouvelle-carte__bouton:visited {
-  color: #2b2119;
+  color: #4a3428;
 }
 
 .nouvelle-carte__bouton:focus-visible {
@@ -1714,9 +1713,7 @@ picture {
 }
 
 .nouvelle-carte__bouton:active {
-  background: #1f1711;
-  color: #ffffff;
-  border-color: #1f1711;
+  background: #cf8d38;
   transform: translateY(1px);
 }
 
@@ -1987,7 +1984,7 @@ picture {
   border: 1px solid #d8cdbd;
   border-radius: 6px;
   background: #f7f1e8;
-  color: #2b2119;
+  color: #5a4638;
   text-decoration: none;
   font-size: 1.8rem;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.12s ease, box-shadow 0.2s ease;
@@ -2003,7 +2000,7 @@ picture {
 
 .single-nouvelle__btn-nav:visited,
 .single-nouvelle__btn-retour:visited {
-  color: #2b2119;
+  color: #5a4638;
 }
 
 .single-nouvelle__btn-nav:focus-visible,
