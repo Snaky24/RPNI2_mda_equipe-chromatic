@@ -1409,6 +1409,14 @@ picture {
   padding: 0 2rem;
 }
 
+.page-nouvelles__liste-titre {
+  margin: 0 0 3rem 0;
+  text-align: center;
+  font-size: 3.2rem;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
 .nouvelles-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
