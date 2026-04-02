@@ -717,14 +717,6 @@ body {
   text-align: center;
 }
 
-.entete__sous-titre-page {
-  color: #fff;
-  font-size: 2rem;
-  line-height: 1.5;
-  max-width: 900px;
-  text-align: center;
-}
-
 /* BOUTON */
 .entete__btn {
   background-color: #e5a24a;
