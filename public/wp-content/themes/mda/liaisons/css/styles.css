@@ -1381,6 +1381,18 @@ picture {
   padding: 6rem 0 8rem 0;
 }
 
+.u-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .page-nouvelles__intro {
   max-width: 1200px;
   margin: 0 auto 4rem auto;
@@ -1413,6 +1425,13 @@ picture {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 4rem 3rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nouvelles-grid__item {
+  min-width: 0;
 }
 
 .nouvelle-carte {
@@ -1505,6 +1524,15 @@ picture {
 
 .nouvelle-carte__titre a:hover {
   text-decoration: underline;
+}
+
+.nouvelle-carte__image-lien:focus-visible,
+.nouvelle-carte__titre a:focus-visible,
+.nouvelle-carte__bouton:focus-visible,
+.single-nouvelle__btn-nav:focus-visible,
+.single-nouvelle__btn-retour:focus-visible {
+  outline: 3px solid #1a73e8;
+  outline-offset: 3px;
 }
 
 /* DATE */
@@ -1610,6 +1638,23 @@ picture {
   position: relative;
   margin-bottom: 4rem;
   overflow: hidden;
+}
+
+.single-nouvelle__hero--sans-image {
+  background: #4B4032;
+  border-radius: 1.2rem;
+  padding: 2.4rem 2rem;
+}
+
+.single-nouvelle__hero--sans-image::after {
+  display: none;
+}
+
+.single-nouvelle__hero--sans-image .single-nouvelle__hero-contenu {
+  position: static;
+  left: auto;
+  right: auto;
+  bottom: auto;
 }
 
 .single-nouvelle__hero::after {

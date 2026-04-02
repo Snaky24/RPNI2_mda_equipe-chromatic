@@ -12,7 +12,7 @@ $retour_nouvelles_url = !empty($page_nouvelles)
     : get_post_type_archive_link('nouvelles');
 ?>
 
-<main class="single-nouvelle">
+<main class="single-nouvelle" id="contenu-principal">
 
     <?php if (have_posts()) : the_post(); ?>
 
@@ -25,6 +25,8 @@ $retour_nouvelles_url = !empty($page_nouvelles)
     $date_affichee       = !empty($date_nouvelle)
         ? $date_nouvelle
         : wp_date('j F Y', get_post_timestamp(get_the_ID(), 'date'));
+    $date_iso            = get_post_time('c', true);
+    $a_une_image         = has_post_thumbnail();
 
     $titre_courant = trim(wp_strip_all_tags(get_the_title()));
 
@@ -125,11 +127,12 @@ HTML
 
     <article class="single-nouvelle__article">
 
-        <a href="<?php echo esc_url($retour_nouvelles_url); ?>" class="single-nouvelle__btn-retour single-nouvelle__btn-retour--top">Retour aux nouvelles</a>
+        <a href="<?php echo esc_url($retour_nouvelles_url); ?>" class="single-nouvelle__btn-retour single-nouvelle__btn-retour--top" aria-label="Retour à la liste des nouvelles">Retour aux nouvelles</a>
 
-        <?php if (has_post_thumbnail()) : ?>
-            <section class="single-nouvelle__hero">
+            <section class="single-nouvelle__hero <?php echo $a_une_image ? '' : 'single-nouvelle__hero--sans-image'; ?>">
+                <?php if ($a_une_image) : ?>
                 <?php the_post_thumbnail('large', array('class' => 'single-nouvelle__hero-image')); ?>
+                <?php endif; ?>
 
                 <div class="single-nouvelle__hero-contenu">
                     <h1 class="single-nouvelle__titre"><?php the_title(); ?></h1>
@@ -149,13 +152,13 @@ HTML
                                 </defs>
                             </svg>
                         </span>
-                        <span><?php echo esc_html($date_affichee); ?></span>
+                        <time datetime="<?php echo esc_attr($date_iso); ?>"><?php echo esc_html($date_affichee); ?></time>
                     </p>
                 </div>
             </section>
-        <?php endif; ?>
 
-        <section class="single-nouvelle__intro">
+        <section class="single-nouvelle__intro" aria-labelledby="single-nouvelle-contenu-titre">
+            <h2 id="single-nouvelle-contenu-titre" class="u-visually-hidden">Contenu de la nouvelle</h2>
             <?php
             if (!empty($contenu_personnalise)) {
                 echo wp_kses_post($contenu_personnalise);
@@ -165,13 +168,13 @@ HTML
             ?>
         </section>
 
-        <nav class="single-nouvelle__navigation">
+        <nav class="single-nouvelle__navigation" aria-label="Navigation entre les nouvelles">
             <?php if ($nouvelle_precedente) : ?>
-                <a href="<?php echo esc_url(get_permalink($nouvelle_precedente->ID)); ?>" class="single-nouvelle__btn-nav single-nouvelle__btn-nav--prev">← Précédent</a>
+                <a href="<?php echo esc_url(get_permalink($nouvelle_precedente->ID)); ?>" class="single-nouvelle__btn-nav single-nouvelle__btn-nav--prev" aria-label="Article précédent : <?php echo esc_attr(get_the_title($nouvelle_precedente->ID)); ?>">← Précédent</a>
             <?php endif; ?>
 
             <?php if ($nouvelle_suivante) : ?>
-                <a href="<?php echo esc_url(get_permalink($nouvelle_suivante->ID)); ?>" class="single-nouvelle__btn-nav single-nouvelle__btn-nav--next">Suivant →</a>
+                <a href="<?php echo esc_url(get_permalink($nouvelle_suivante->ID)); ?>" class="single-nouvelle__btn-nav single-nouvelle__btn-nav--next" aria-label="Article suivant : <?php echo esc_attr(get_the_title($nouvelle_suivante->ID)); ?>">Suivant →</a>
             <?php endif; ?>
         </nav>
 
