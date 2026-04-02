@@ -1991,7 +1991,13 @@ picture {
 }
 
 .single-nouvelle__btn-nav:hover,
-.single-nouvelle__btn-retour:hover,
+.single-nouvelle__btn-retour:hover {
+  background: #4B4032;
+  color: #ffffff;
+  border-color: #4B4032;
+  transform: translateY(-1px);
+}
+
 .single-nouvelle__btn-nav:visited,
 .single-nouvelle__btn-retour:visited {
   color: #5a4638;
