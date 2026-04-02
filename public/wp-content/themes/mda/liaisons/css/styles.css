@@ -1421,6 +1421,8 @@ picture {
   border-radius: 0.6rem;
   overflow: hidden;
   box-shadow: none;
+  display: flex;
+  flex-direction: column;
 }
 
 /* IMAGE */
@@ -1451,6 +1453,7 @@ picture {
 /* CONTENU */
 .nouvelle-carte__contenu {
   background: #ffffff;
+  margin: 0 1.5rem;
   padding-bottom: 2rem;
   position: relative;
 }
@@ -1460,8 +1463,8 @@ picture {
   position: relative;
   margin: 0;
   margin-top: -1.2rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 0;
+  margin-right: 0;
   min-height: 8.5rem;
   background-image: url("/RPNI2_mda_equipe-chromatic/public/wp-content/uploads/2026/03/Rectangle%206.png");
   background-repeat: no-repeat;
