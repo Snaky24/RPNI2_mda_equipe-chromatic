@@ -32,13 +32,11 @@ get_header();
                 while ($query_volets->have_posts()) :
                     $query_volets->the_post();
 
-                    $photo_base   = get_field('photo_1');
-                    $photo_dessus = get_field('photo_2');
+                    $photo_base = get_field('photo_1');
             ?>
                     <article class="carte-polaroid volet-culturel__carte">
                         <div class="polaroid__image volet-culturel-polaroid__image">
                             <?php
-                            // Image principale : ACF photo_1, sinon image à la une, sinon placeholder
                             if ($photo_base) {
                                 echo wp_get_attachment_image(
                                     is_array($photo_base) ? $photo_base['ID'] : $photo_base,
@@ -51,19 +49,8 @@ get_header();
                             <?php } ?>
                         </div>
 
-                        <?php if ($photo_dessus) : ?>
-                            <div class="polaroid__image polaroid__image--overlay">
-                                <?php
-                                echo wp_get_attachment_image(
-                                    is_array($photo_dessus) ? $photo_dessus['ID'] : $photo_dessus,
-                                    'large'
-                                );
-                                ?>
-                            </div>
-                        <?php endif; ?>
-
                         <div class="polaroid__texte">
-                            <h3 class="volet-culturel__titre"><?php the_title(); ?></h3> 
+                            <h3 class="volet-culturel__titre"><?php the_title(); ?></h3>
                             <a href="<?php the_permalink(); ?>" class="btn-volet">Voir plus</a>
                         </div>
                     </article>

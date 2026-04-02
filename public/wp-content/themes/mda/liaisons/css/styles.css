@@ -983,16 +983,15 @@ body {
 
 /** barres latérales  optionnelles**/
 /** pages **/
-.titre-principal {
+.accueil .titre-principal {
   text-align: center;
   margin: 80px 0 40px;
   font-family: "EB Garamond", serif;
   font-size: 64px;
   font-weight: 500;
-  color: #fff;
+  color: #4B4032;
 }
-
-.section__titre {
+.accueil .section__titre {
   font-family: "EB Garamond", serif;
   font-size: 48px;
   font-weight: 500;
@@ -1000,8 +999,7 @@ body {
   margin-bottom: 50px;
   color: #4B4032;
 }
-
-.btn-voir-plus {
+.accueil .btn-voir-plus {
   display: inline-flex;
   align-items: center;
   padding: 10px 22px;
@@ -1014,16 +1012,15 @@ body {
   text-decoration: none;
   transition: all 0.2s ease;
 }
-.btn-voir-plus::after {
+.accueil .btn-voir-plus::after {
   content: " →";
   margin-left: 8px;
 }
-.btn-voir-plus:hover {
+.accueil .btn-voir-plus:hover {
   background-color: rgb(235.752238806, 147.9343283582, 32.447761194);
   transform: translateX(3px);
 }
-
-.btn-beige {
+.accueil .btn-beige {
   display: inline-block;
   width: fit-content;
   white-space: nowrap;
@@ -1036,15 +1033,14 @@ body {
   font-size: 20px;
   transition: all 0.2s ease;
 }
-.btn-beige:hover {
+.accueil .btn-beige:hover {
   background-color: #C6A477;
   color: white !important;
 }
-
-.nouvelles {
+.accueil .nouvelles {
   padding: 80px 0;
 }
-.nouvelles__grille {
+.accueil .nouvelles__grille {
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -1052,21 +1048,20 @@ body {
   margin: 0 auto;
   flex-wrap: wrap;
 }
-
-.carte-polaroid {
+.accueil .carte-polaroid {
   background: #C6A477;
   padding: 0;
   box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.1);
-  width: 70%;
+  width: 310px;
   position: relative;
   text-align: center;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
   cursor: pointer;
 }
-.carte-polaroid::before {
+.accueil .carte-polaroid::before {
   content: "";
   position: absolute;
-  top: -40px;
+  top: -15px;
   left: 50%;
   transform: translateX(-50%) rotate(-2deg);
   width: 90px;
@@ -1078,42 +1073,39 @@ body {
   z-index: 30;
   pointer-events: none;
 }
-.carte-polaroid:nth-child(1), .carte-polaroid:nth-child(2), .carte-polaroid:nth-child(3) {
+.accueil .carte-polaroid:nth-child(1), .accueil .carte-polaroid:nth-child(2), .accueil .carte-polaroid:nth-child(3) {
   transform: rotate(0deg);
 }
-.carte-polaroid:hover {
+.accueil .carte-polaroid:hover {
   transform: rotate(3deg) scale(1.05);
   box-shadow: 15px 20px 30px rgba(0, 0, 0, 0.2);
 }
-.carte-polaroid:hover::before {
+.accueil .carte-polaroid:hover::before {
   opacity: 0.8;
 }
-.carte-polaroid .polaroid__image {
+.accueil .carte-polaroid .polaroid__image {
   background: white;
   margin: 15px;
   padding: 10px 10px 35px 10px;
   border: 1px solid #ccc;
-  top: -30px;
-  position: relative;
 }
-.carte-polaroid .polaroid__image img {
+.accueil .carte-polaroid .polaroid__image img {
   width: 100%;
   height: 180px;
   object-fit: cover;
   display: block;
 }
-.carte-polaroid .polaroid__texte {
+.accueil .carte-polaroid .polaroid__texte {
   padding: 0 20px 25px;
 }
-.carte-polaroid .polaroid__texte p {
+.accueil .carte-polaroid .polaroid__texte p {
   font-family: "Inter", sans-serif;
   font-size: 20px;
   font-weight: 400;
   color: #4B4032;
   margin-bottom: 15px;
 }
-
-.a-propos {
+.accueil .a-propos {
   background: #4B4032;
   color: white;
   width: 100vw;
@@ -1123,8 +1115,8 @@ body {
   position: relative;
   overflow: visible;
 }
-.a-propos .separateur_haut,
-.a-propos .separateur_bas {
+.accueil .a-propos .separateur_haut,
+.accueil .a-propos .separateur_bas {
   position: absolute;
   left: 0;
   width: 100%;
@@ -1134,17 +1126,17 @@ body {
   z-index: 10;
   pointer-events: none;
 }
-.a-propos .separateur_haut {
+.accueil .a-propos .separateur_haut {
   top: 0;
   background-image: url("../images/separateur_haut.png");
   transform: translateY(-95%);
 }
-.a-propos .separateur_bas {
+.accueil .a-propos .separateur_bas {
   bottom: 0;
   background-image: url("../images/separateur_bas.png");
   transform: translateY(95%);
 }
-.a-propos__contenu {
+.accueil .a-propos__contenu {
   display: flex;
   max-width: 1100px;
   margin: 0 auto;
@@ -1152,34 +1144,34 @@ body {
   gap: 60px;
   padding: 0 40px;
 }
-.a-propos__texte {
+.accueil .a-propos__texte {
   flex: 1;
 }
-.a-propos__texte h2 {
+.accueil .a-propos__texte h2 {
   font-family: "EB Garamond", serif;
   font-size: 48px;
   font-weight: 500;
   margin-bottom: 20px;
 }
-.a-propos__texte p {
+.accueil .a-propos__texte p {
   font-family: "Inter", sans-serif;
   font-size: 20px;
   line-height: 1.6;
   opacity: 0.9;
 }
-.a-propos__images {
+.accueil .a-propos__images {
   flex: 1;
   position: relative;
   height: auto;
   min-height: 320px;
 }
-.a-propos__images .img-wrapper {
+.accueil .a-propos__images .img-wrapper {
   position: absolute;
 }
-.a-propos__images .img-wrapper::before {
+.accueil .a-propos__images .img-wrapper::before {
   content: "";
   position: absolute;
-  top: -40px;
+  top: -15px;
   left: 50%;
   transform: translateX(-50%) rotate(-2deg);
   width: 90px;
@@ -1192,58 +1184,57 @@ body {
   pointer-events: none;
   width: 70px;
 }
-.a-propos__images img {
+.accueil .a-propos__images img {
   width: 280px;
   height: 190px;
   object-fit: cover;
   border: 10px solid #fff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
-.a-propos__images .img-inclinee-1 {
+.accueil .a-propos__images .img-inclinee-1 {
   top: 0;
   left: 20px;
   transform: rotate(-6deg);
 }
-.a-propos__images .img-inclinee-2 {
+.accueil .a-propos__images .img-inclinee-2 {
   top: 120px;
   left: 140px;
   transform: rotate(8deg);
 }
-
-.volet-culturel {
+.accueil .volet-culturel {
   padding: 140px 0 220px;
   position: relative;
 }
-.volet-culturel__item {
+.accueil .volet-culturel__item {
   display: none;
 }
-.volet-culturel__item.is-active {
+.accueil .volet-culturel__item.is-active {
   display: block;
 }
-.volet-culturel__conteneur {
+.accueil .volet-culturel__conteneur {
   display: flex;
   align-items: center;
   max-width: 1100px;
   margin: 0 auto;
   position: relative;
 }
-.volet-culturel__images {
+.accueil .volet-culturel__images {
   flex: 1;
   position: relative;
   height: 450px;
   z-index: 10;
 }
-.volet-culturel__images .img-polaroid {
+.accueil .volet-culturel__images .img-polaroid {
   background: white;
   padding: 10px 10px 45px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   position: absolute;
   width: 290px;
 }
-.volet-culturel__images .img-polaroid::before {
+.accueil .volet-culturel__images .img-polaroid::before {
   content: "";
   position: absolute;
-  top: -40px;
+  top: -15px;
   left: 50%;
   transform: translateX(-50%) rotate(-2deg);
   width: 90px;
@@ -1256,24 +1247,24 @@ body {
   pointer-events: none;
   width: 80px;
 }
-.volet-culturel__images .img-polaroid img {
+.accueil .volet-culturel__images .img-polaroid img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
-.volet-culturel__images .img-polaroid--base {
+.accueil .volet-culturel__images .img-polaroid--base {
   top: 0;
   left: -30px;
   transform: rotate(-7deg);
   z-index: 1;
 }
-.volet-culturel__images .img-polaroid--dessus {
+.accueil .volet-culturel__images .img-polaroid--dessus {
   bottom: -20px;
   left: 120px;
   transform: rotate(5deg);
   z-index: 20;
 }
-.volet-culturel__bloc-info {
+.accueil .volet-culturel__bloc-info {
   flex: 1.2;
   background: #4B4032;
   color: white;
@@ -1285,19 +1276,19 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-.volet-culturel__bloc-info h2 {
+.accueil .volet-culturel__bloc-info h2 {
   font-family: "EB Garamond", serif;
   font-size: 36px;
   font-weight: 500;
   margin-bottom: 20px;
 }
-.volet-culturel__bloc-info p {
+.accueil .volet-culturel__bloc-info p {
   font-family: "Inter", sans-serif;
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 10px;
 }
-.volet-culturel__controles {
+.accueil .volet-culturel__controles {
   position: absolute;
   bottom: 60px;
   left: 50%;
@@ -1311,7 +1302,7 @@ body {
   border-radius: 4px;
   z-index: 100;
 }
-.volet-culturel__controles .fleche {
+.accueil .volet-culturel__controles .fleche {
   background: none;
   border: none;
   cursor: pointer;
@@ -1322,7 +1313,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-.volet-culturel__controles .fleche::after {
+.accueil .volet-culturel__controles .fleche::after {
   content: "";
   width: 12px;
   height: 12px;
@@ -1331,30 +1322,30 @@ body {
   position: absolute;
   transition: all 0.2s ease;
 }
-.volet-culturel__controles .fleche#prevVolet::after {
+.accueil .volet-culturel__controles .fleche#prevVolet::after {
   transform: rotate(-135deg);
   left: 5px;
 }
-.volet-culturel__controles .fleche#nextVolet::after {
+.accueil .volet-culturel__controles .fleche#nextVolet::after {
   transform: rotate(45deg);
   right: 5px;
 }
-.volet-culturel__controles .fleche:hover::after {
+.accueil .volet-culturel__controles .fleche:hover::after {
   border-color: #EFA646;
 }
-.volet-culturel__controles .points-container {
+.accueil .volet-culturel__controles .points-container {
   display: flex;
   gap: 12px;
   align-items: center;
 }
-.volet-culturel__controles .point {
+.accueil .volet-culturel__controles .point {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: #EFA646;
   cursor: pointer;
 }
-.volet-culturel__controles .point--actif {
+.accueil .volet-culturel__controles .point--actif {
   background-color: #4B4032;
   transform: rotate(45deg);
   border-radius: 2px;

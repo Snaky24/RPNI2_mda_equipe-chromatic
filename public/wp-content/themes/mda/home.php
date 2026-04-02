@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="site-main">
+<main class="site-main accueil">
     <h1 class="titre-principal"><?php bloginfo('name'); ?></h1>
 
     <section class="nouvelles">
