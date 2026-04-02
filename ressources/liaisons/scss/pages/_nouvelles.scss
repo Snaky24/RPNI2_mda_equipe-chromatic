@@ -231,11 +231,35 @@
 
 	border: none;
 	box-sizing: border-box;
-	transition: 0.2s ease;
+	transition: background-color 0.2s ease, color 0.2s ease, transform 0.12s ease, box-shadow 0.2s ease;
 }
 
 .nouvelle-carte__bouton:hover {
 	background: #e39c3f;
+}
+
+.nouvelle-carte__bouton:visited {
+	color: #4a3428;
+}
+
+.nouvelle-carte__bouton:focus-visible {
+	outline: 3px solid #1a73e8;
+	outline-offset: 3px;
+	box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7);
+}
+
+.nouvelle-carte__bouton:active {
+	background: #cf8d38;
+	transform: translateY(1px);
+}
+
+.nouvelle-carte__bouton[aria-disabled="true"],
+.nouvelle-carte__bouton.is-disabled {
+	background: #d8cdbd;
+	color: #7f7467;
+	pointer-events: none;
+	cursor: not-allowed;
+	opacity: 0.75;
 }
 
 /* RESPONSIVE */
@@ -504,16 +528,40 @@
 	color: #5a4638;
 	text-decoration: none;
 	font-size: 1.8rem;
-	transition: background 0.2s ease, color 0.2s ease;
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.12s ease, box-shadow 0.2s ease;
 }
 
 .single-nouvelle__btn-nav:hover,
-.single-nouvelle__btn-nav:active,
 .single-nouvelle__btn-retour:hover,
+.single-nouvelle__btn-nav:visited,
+.single-nouvelle__btn-retour:visited {
+	color: #5a4638;
+}
+
+.single-nouvelle__btn-nav:focus-visible,
+.single-nouvelle__btn-retour:focus-visible {
+	outline: 3px solid #1a73e8;
+	outline-offset: 3px;
+	box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7);
+}
+
+.single-nouvelle__btn-nav:active,
 .single-nouvelle__btn-retour:active {
 	background: #4B4032;
 	color: #ffffff;
 	border-color: #4B4032;
+	transform: translateY(1px);
+}
+
+.single-nouvelle__btn-nav[aria-disabled="true"],
+.single-nouvelle__btn-nav.is-disabled,
+.single-nouvelle__btn-retour[aria-disabled="true"],
+.single-nouvelle__btn-retour.is-disabled {
+	background: #ece5da;
+	color: #9c8f81;
+	border-color: #ded3c4;
+	pointer-events: none;
+	cursor: not-allowed;
 }
 
 @media screen and (max-width: 900px) {
