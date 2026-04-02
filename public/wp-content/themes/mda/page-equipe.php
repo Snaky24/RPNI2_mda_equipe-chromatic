@@ -21,16 +21,21 @@ get_header();
         //tant qu'il restera des articles
         foreach ($posts as $post) { ?>
             <?php
-            $image_info = get_field("photo_membre");
+            $image_info = get_field("photo_1");
 
             if ($image_info != null) {
-
             ?>
-                <picture>
-                    <source media="(min-width: 800px)" srcset="<?php echo $image_info['sizes']["large"]; ?>">
-                    <source media="(min-width: 601px)" srcset="<?php echo $image_info['sizes']["medium"]; ?>">
-                    <img src="<?php echo $image_info['sizes']['thumbnail']; ?>" alt="<?php echo $image_info["alt"]; ?>">
-                </picture>
+            
+            <?php
+                $img_tablet = wp_get_attachment_image_src($image_info, "EquipeTable");
+                $img_mobile = wp_get_attachment_image_src($image_info, "EquipeMobile");
+                $alt = get_post_meta($image_info, '_wp_attachment_image_alt', true);
+            ?>
+            <picture>
+                <source media="(min-width: 800px)" srcset="<?php echo esc_url($img_tablet[0]); ?>">
+                <source media="(min-width: 601px)" srcset="<?php echo esc_url($img_mobile[0]); ?>">
+                <img src="<?php echo esc_url($img_mobile[0]); ?>" alt="<?php echo esc_attr($alt); ?>">
+            </picture>
 
             <?php } ?>
             <article class="article_Equipe">

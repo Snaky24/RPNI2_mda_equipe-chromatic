@@ -65,7 +65,7 @@
 
         <div class="entete__contenu">
             <h1 class="entete__slogan">
-                <?php bloginfo('description'); ?>
+                « Un lieu vivant où culture, patrimoine et communauté se rencontrent. »
             </h1>
 
             <a href="#" class="entete__btn">Voir plus</a>
