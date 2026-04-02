@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/liaisons/css/styles.css">
     <script defer src="<?php echo get_template_directory_uri(); ?>/liaisons/js/visionneuse.js"></script>
+    <script defer src="<?php echo get_template_directory_uri(); ?>/liaisons/js/menu.js"></script>
 
     <?php wp_head(); ?>
 </head>
@@ -24,19 +25,29 @@
 
 <header class="entete">
 
-    <!-- TOPBAR  -->
     <div class="entete__topbar">
 
         <div class="entete__logo">
-            <a href="<?php bloginfo('url'); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/logo_beige.png" alt="Logo">
+            <a href="<?php echo home_url('/'); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/logo_beige.png" alt="<?php bloginfo('name'); ?>">
             </a>
         </div>
 
-        <div class="entete__menu">
+        <button class="entete__burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="entete__menu" id="menu-principal">
             <?php if (has_nav_menu("principal")) { ?>
                 <nav class="entete__nav">
-                    <?php wp_nav_menu(array('theme_location' => 'principal')); ?>
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'principal',
+                        'container' => false
+                    ));
+                    ?>
                 </nav>
             <?php } ?>
         </div>
@@ -47,21 +58,18 @@
 
     </div>
 
-    <!-- VIDÉO -->
     <div class="entete__video">
         <video autoplay muted loop playsinline>
             <source src="<?php echo get_template_directory_uri(); ?>/liaisons/videos/entete__video.mp4" type="video/mp4">
         </video>
 
-        <!-- OVERLAY -->
         <div class="entete__contenu">
             <h1 class="entete__slogan">
-                « Un lieu vivant où culture, patrimoine et communauté se rencontrent. »
+                <?php bloginfo('description'); ?>
             </h1>
 
             <a href="#" class="entete__btn">Voir plus</a>
         </div>
-
     </div>
 
 </header>

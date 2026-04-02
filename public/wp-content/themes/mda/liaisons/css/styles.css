@@ -597,14 +597,11 @@ body {
 
 /****** MODULES ******/
 /** entête de page **/
-/* CONTENEUR GLOBAL */
 .entete {
   position: relative;
 }
 
-/* 
-   TOPBAR 
-*/
+/* TOPBAR */
 .entete__topbar {
   position: absolute;
   top: 0;
@@ -614,14 +611,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
   padding: 1.5rem 2rem;
   background: transparent;
   color: #fff;
 }
 
 /* LOGO */
+.entete__logo {
+  position: relative;
+  z-index: 12;
+}
+
 .entete__logo img {
   height: 50px;
+  display: block;
 }
 
 /* MENU */
@@ -639,11 +643,21 @@ body {
   padding: 0;
 }
 
+.entete__nav li {
+  margin: 0;
+  padding: 0;
+}
+
 .entete__nav a {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.entete__nav a:hover {
+  opacity: 0.75;
 }
 
 /* RECHERCHE */
@@ -651,18 +665,42 @@ body {
   min-width: 200px;
   display: flex;
   justify-content: flex-end;
+  position: relative;
+  z-index: 12;
 }
 
-/* 
-   VIDEO
- */
+/* BURGER */
+.entete__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  z-index: 12;
+}
+
+.entete__burger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #fff;
+  margin: 0 auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* VIDÉO */
 .entete__video {
   position: relative;
   height: 500px;
   overflow: hidden;
 }
 
-/* VIDEO */
 .entete__video video {
   position: absolute;
   top: 0;
@@ -673,7 +711,6 @@ body {
   z-index: 1;
 }
 
-/* OVERLAY FONCÉ */
 .entete__video::before {
   content: "";
   position: absolute;
@@ -682,9 +719,7 @@ body {
   z-index: 2;
 }
 
-/* 
-  SLOGAN + BOUTON
- */
+/* CONTENU */
 .entete__contenu {
   position: absolute;
   inset: 0;
@@ -698,7 +733,6 @@ body {
   padding: 0 2rem;
 }
 
-/* SLOGAN */
 .entete__slogan {
   color: #fff;
   font-size: 2.2rem;
@@ -706,7 +740,6 @@ body {
   line-height: 1.4;
 }
 
-/* BOUTON */
 .entete__btn {
   background-color: #e5a24a;
   color: #000;
@@ -721,6 +754,92 @@ body {
   background-color: #cf8d38;
 }
 
+/* TABLETTE */
+@media screen and (max-width: 1024px) {
+  .entete__topbar {
+    padding: 1.25rem 1.5rem;
+    gap: 1rem;
+  }
+  .entete__nav ul {
+    gap: 1.25rem;
+  }
+  .entete__slogan {
+    font-size: 1.9rem;
+    max-width: 700px;
+  }
+  .entete__recherche {
+    min-width: 160px;
+  }
+}
+/* MOBILE */
+@media screen and (max-width: 768px) {
+  .entete__topbar {
+    padding: 1rem 1rem;
+  }
+  .entete__burger {
+    display: flex;
+  }
+  .entete__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    justify-content: flex-start;
+    background-color: rgba(75, 64, 50, 0.97);
+    padding: 1.5rem 1rem;
+  }
+  .entete__menu.is-open {
+    display: block;
+  }
+  .entete__nav {
+    width: 100%;
+  }
+  .entete__nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .entete__nav a {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+  }
+  .entete__recherche {
+    display: none;
+  }
+  .entete__video {
+    height: 420px;
+  }
+  .entete__slogan {
+    font-size: 1.6rem;
+    max-width: 90%;
+  }
+  .entete__btn {
+    padding: 0.85rem 1.8rem;
+  }
+}
+/* PETITS MOBILES */
+@media screen and (max-width: 480px) {
+  .entete__logo img {
+    height: 42px;
+  }
+  .entete__video {
+    height: 360px;
+  }
+  .entete__contenu {
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  .entete__slogan {
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+  .entete__btn {
+    padding: 0.75rem 1.4rem;
+    font-size: 0.95rem;
+  }
+}
 /** navigation **/
 .navigation {
   max-width: 960px;
