@@ -1,31 +1,54 @@
-<?php get_header(); ?>
+<?php
+/* Template Name: Création et résidences d’artistes */
+get_header();
+?>
 
-<main class="page">
-    <section class="section">
-        <div class="images">
-            <?php
+<main class="site-main page-description_volet">
 
-            $image_info = get_field("photo_1");
+    <!-- Fil d’Ariane -->
+    <nav class="breadcrumb">
+        <a href="<?php echo esc_url(home_url('/')); ?>">Accueil</a> >
+        <a href="<?php echo esc_url(home_url('/volets-culturels')); ?>">Volets culturels</a> >
+        <span><?php the_title(); ?></span>
+    </nav>
 
-            //Si l'image est définie dans ACF
-            if ($image_info != null) {
+    <!-- Titre principal -->
+    <h1 class="page-residence__titre"><?php the_title(); ?></h1>
 
-                //Utiliser la balise picture pour le redimensionnement de l'image 
-            ?>
-                <picture class="picture-volet1">
-                    <source media="(min-width: 800px)" srcset="<?php echo $image_info['sizes']["large"]; ?>">
-                    <source media="(min-width: 601px)" srcset="<?php echo $image_info['sizes']["medium"]; ?>">
-                    <img src="<?php echo $image_info['sizes']['thumbnail']; ?>" alt="<?php echo $image_info["alt"]; ?>">
-                </picture>
-
-            <?php } ?>
-            <img src="etage-lumineux.jpg" alt="Étage lumineux" class="photo photo-2">
-        </div>
-
-        <div class="texte">
-            <?php the_content() ?>
+    <!-- Texte principal -->
+    <section class="page-residence__intro">
+        <div class="intro__contenu">
+            <?php the_content(); ?>
         </div>
     </section>
+
+    <!-- Photos style Polaroid -->
+    <section class="page-residence__photos">
+
+        <?php
+        $photo_1 = get_field('photo_1');
+        ?>
+
+        <div class="polaroid">
+            <?php
+            if ($photo_1) {
+                echo wp_get_attachment_image($photo_1['ID'], 'large');
+            }
+            ?>
+        </div>
+
+    </section>
+
+    <!-- Navigation Précédent / Suivant -->
+    <div class="page-residence__nav">
+        <div class="nav-prev">
+            <?php previous_post_link('%link', '← Précédent'); ?>
+        </div>
+        <div class="nav-next">
+            <?php next_post_link('%link', 'Suivant →'); ?>
+        </div>
+    </div>
+
 </main>
 
 <?php get_footer(); ?>

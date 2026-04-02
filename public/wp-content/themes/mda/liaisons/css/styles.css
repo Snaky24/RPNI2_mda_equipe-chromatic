@@ -1457,6 +1457,62 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+.page-description_volet {
+  background-color: #4a3b2f;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  color: #7a6a5a;
+}
+
+.page-residence__titre {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.page-residence__intro {
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.page-residence__photos {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.polaroid {
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  transform: rotate(-2deg);
+}
+
+.polaroid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-residence__nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.page-residence__nav a {
+  color: #4a3b2f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 /* =========================
    PAGE NOUVELLES
 ========================= */
