@@ -60,7 +60,7 @@
 .nouvelle-carte__image {
 	display: block;
 	width: 100%;
-	height: 280px;
+	height: 430px;
 	object-fit: cover;
 	position: relative;
 	z-index: 1;
@@ -69,7 +69,7 @@
 .nouvelle-carte__image-placeholder {
 	display: block;
 	width: 100%;
-	height: 280px;
+	height: 430px;
 	background: #ffa200;
 }
 
@@ -220,7 +220,11 @@
 	}
 
 	.nouvelle-carte__image {
-		height: 240px;
+		height: 340px;
+	}
+
+	.nouvelle-carte__image-placeholder {
+		height: 340px;
 	}
 }
 
