@@ -16,7 +16,7 @@ get_header();
     ?>
 
     <section class="page-nouvelles__liste" aria-labelledby="nouvelles-liste-titre">
-        <h2 id="nouvelles-liste-titre" class="page-nouvelles__liste-titre">Liste des nouvelles</h2>
+        <h2 id="nouvelles-liste-titre" class="section__titre page-nouvelles__liste-titre">Nouvelles</h2>
         <?php if ($requete_nouvelles->have_posts()) : ?>
             <ul class="nouvelles-grid" role="list">
 
