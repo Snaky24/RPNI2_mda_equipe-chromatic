@@ -57,6 +57,7 @@
         <div class="entete__contenu">
             <?php if (is_page_template('page-nouvelles.php')) : ?>
                 <h1 class="entete__titre-page"><?php echo esc_html(get_the_title()); ?></h1>
+                <p class="entete__sous-titre-page">Envie d’en apprendre plus sur notre travail et nos nouvelles…</p>
             <?php else : ?>
                 <h1 class="entete__slogan">
                     « Un lieu vivant où culture, patrimoine et communauté se rencontrent. »
