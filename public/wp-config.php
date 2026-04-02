@@ -1,9 +1,4 @@
 <?php
-define('COOKIEPATH', '/');
-define('SITECOOKIEPATH', '/');
-define('ADMIN_COOKIE_PATH', '/');
-define('WP_HOME', 'http://localhost:8888/RPNI2_mda_equipe-chromatic/public');
-define('WP_SITEURL', 'http://localhost:8888/RPNI2_mda_equipe-chromatic/public');
 /**
  * The base configuration for WordPress
  *
@@ -28,10 +23,10 @@ define('WP_SITEURL', 'http://localhost:8888/RPNI2_mda_equipe-chromatic/public');
 define( 'DB_NAME', 'rpni2_mda' );
 
 /** Database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'rpni2_mda_user' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'root' );
+define( 'DB_PASSWORD', 'rpni2_mda_mdp' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );

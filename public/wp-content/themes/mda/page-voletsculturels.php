@@ -7,6 +7,32 @@ get_header(); //Appel de l'inclusion d'entête de page
     <div class="contenu-page">
         <?php the_content(); ?>
     </div>
+    <div class="nouvelles__grille">
+        <?php
+        $query_news = new WP_Query([
+            'post_type'      => 'nouvelles',
+            'posts_per_page' => 3
+        ]);
+        if ($query_news->have_posts()) {
+            while ($query_news->have_posts()) {
+                $query_news->the_post(); ?>
+                <article class="carte-polaroid">
+                    <div class="polaroid__image">
+                        <?php if (has_post_thumbnail()) {
+                            the_post_thumbnail('large');
+                        } else { ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/placeholder.jpg" alt="Image par défaut">
+                        <?php } ?>
+                    </div>
+                    <div class="polaroid__texte">
+                        <p><?php echo wp_trim_words(get_the_excerpt(), 12); ?></p>
+                        <a href="<?php the_permalink(); ?>" class="btn-voir-plus">Voir plus</a>
+                    </div>
+                </article>
+        <?php }
+            wp_reset_postdata();
+        } ?>
+    </div>
     <?php
     // Utiliser le code ci-dessous pour créer une image responsive
     if (has_post_thumbnail()) {
