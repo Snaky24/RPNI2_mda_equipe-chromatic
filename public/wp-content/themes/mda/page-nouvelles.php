@@ -1,4 +1,7 @@
 <?php
+define( 'WP_HOME', 'https://timunix3.csfoy.ca/~equipe_chromatic' );
+define( 'WP_SITEURL', 'https://timunix3.csfoy.ca/~equipe_chromatic' );
+
 /* Template Name: Nouvelles */
 get_header();
 ?>
