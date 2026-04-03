@@ -1642,7 +1642,7 @@ body {
   margin-left: 1rem;
   margin-right: 1rem;
   min-height: 8.5rem;
-  background-image: url("/RPNI2_mda_equipe-chromatic/public/wp-content/uploads/2026/03/Rectangle%206.png");
+  background-image: url("../../../uploads/2026/03/Rectangle%206.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
@@ -1664,7 +1664,7 @@ body {
   transform: translateX(-50%) rotate(-4deg);
   width: 12rem;
   height: 3.8rem;
-  background-image: url("/RPNI2_mda_equipe-chromatic/public/wp-content/uploads/2026/03/scotch-tape-png-25%202.png");
+  background-image: url("../../../uploads/2026/03/scotch-tape-png-25%202.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
