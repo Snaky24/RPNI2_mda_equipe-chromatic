@@ -89,8 +89,7 @@ define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
-define( 'WP_HOME', 'https://timunix3.csfoy.ca/~equipe_chromatic' );
-define( 'WP_SITEURL', 'https://timunix3.csfoy.ca/~equipe_chromatic' );
+
 
 /* That's all, stop editing! Happy publishing. */
 
