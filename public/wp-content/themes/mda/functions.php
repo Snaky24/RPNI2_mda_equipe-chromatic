@@ -171,8 +171,8 @@ function agence_nouvelles_custom_post()
         ),
         'hierarchical'        => false,
         'public'              => true,
-        'has_archive'         => true,
-        'rewrite'              => array('slug' => 'nouvelles')
+        'has_archive'         => 'actualites',
+        'rewrite'             => array('slug' => 'actualites')
     );
 
     // On enregistre notre type d'article personnalisé qu'on nomme ici "voletsculturels" et ses arguments
