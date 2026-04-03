@@ -1,104 +1,282 @@
+// ==========================================
+// VARIABLES (si pas déjà définies)
+// ==========================================
+$brunFonce: #4B4032;
+$brunPale: #C6A477;
+$creme: #EDE0D0;
+$jaune: #EFA646;
+
+$fontePrimaire : "Inter", sans-serif;
+
+
+// ==========================================
+// FOOTER
+// ==========================================
 .piedDePage {
-  background-color: #4B4032;
-  color: #EDE0D0;
-  width: 100vw; 
+  background-color: $brunFonce;
+  color: $creme;
+  width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
   margin-top: 100px;
-  
-  padding: 60px 250px; 
+  padding: 60px 250px;
   box-sizing: border-box;
   font-size: 1.3rem;
 
+  a {
+    color: inherit;
+  }
+
   &__inner {
-      width: 100%;
-      margin: 0 auto;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 
 .footer {
+
+  // ========================
+  // LIGNE
+  // ========================
   &__ligne {
-      width: 100%;
-      height: 1px;
-      background-color: rgba(#EDE0D0, 0.4);
-      margin: 30px 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba($creme, 0.4);
+    margin: 30px 0;
   }
 
+  // ========================
+  // CONTENU PRINCIPAL
+  // ========================
   &__contenu {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    padding-bottom: 20px;
   }
 
-  &__gauche {
-      flex: 1;
-      .footer__logo { width: 150px; margin-bottom: 15px; }
-      .footer__description { line-height: 1.5; }
+  &__gauche,
+  &__droite {
+    flex: 1 1 0;
+  }
+
+  &__logo {
+    width: 150px;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  &__description {
+    line-height: 1.6;
+    max-width: 30ch;
   }
 
   &__droite {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; 
-      text-align: left;      
-      gap: 25px;
-      padding-left: 50px;     
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-left: 50px;
   }
 
-  &__contact {
-      p { 
-        margin: 5px 0;
-        display: flex;        
-        align-items: center;
-        gap: 10px;
-      }
-      a {
-         color: inherit;
-         text-decoration: underline;
-      }
+  // ========================
+  // CONTACT
+  // ========================
+  &__adresse {
+    font-style: normal;
   }
 
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 10px;
+  }
+
+  &__icone {
+    flex-shrink: 0;
+
+    svg {
+      width: 25px;
+      height: auto;
+      display: block;
+    }
+  }
+
+
+  &__icone--email {
+    svg {
+      width: 40px;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $creme;
+      outline-offset: 4px;
+    }
+  }
+
+  // ========================
+  // ABONNEMENT
+  // ========================
   &__abonnement {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap; 
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
   }
 
+  &__abonnement-texte {
+    margin: 0;
+  }
+
+  // ========================
+  // BOUTON 
+  // ========================
   &__btn {
-      background-color: #EDE0D0;
-      color: #4B4032;
-      padding: 12px 25px;
-      border-radius: 6px;
-      font-weight: bold;
-      text-decoration: none;
-      white-space: nowrap;
-      font-size: 1.3rem;
+    display: inline-block;
+    width: fit-content;
+    white-space: nowrap;
+    padding: 12px 25px;
+    background-color: $creme;
+    color: $brunFonce !important;
+    font-family: $fontePrimaire;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 6px;
+    border: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: $brunPale;
+      color: white;
+    }
+
+    &:focus-visible {
+      outline: 3px solid $jaune;
+      outline-offset: 4px;
+    }
   }
 
+  // ========================
+  // BAS FOOTER
+  // ========================
   &__bas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    font-size: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__nav {
+    ul {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 1rem;
-      ul {
-          display: flex;
-          list-style: none;
-          gap: 20px;
-          margin: 0; padding: 0;
-          a { color: inherit; text-decoration: none; }
+      flex-wrap: wrap;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
       }
+
+      &:focus-visible {
+        outline: 2px solid $creme;
+        outline-offset: 4px;
+      }
+    }
+  }
+
+  &__copyright {
+    margin: 0;
   }
 
   &__credits {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+}
+
+
+// ==========================================
+// RESPONSIVE
+// ==========================================
+
+@media (max-width: 1200px) {
+  .piedDePage {
+    padding: 60px 120px;
+  }
+}
+
+@media (max-width: 900px) {
+  .piedDePage {
+    padding: 50px 40px;
+  }
+
+  .footer {
+
+    &__contenu {
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    &__droite {
+      padding-left: 0;
+    }
+
+    &__abonnement {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__bas {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .piedDePage {
+    padding: 40px 20px;
+    font-size: 1.05rem;
+  }
+
+  .footer {
+
+    &__logo {
+      width: 120px;
+    }
+
+    &__btn {
+      width: 100%;
       text-align: center;
-      margin-top: 40px;
-      font-size: 1rem;
-      opacity: 0.6;
+    }
+
+    &__nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 }
